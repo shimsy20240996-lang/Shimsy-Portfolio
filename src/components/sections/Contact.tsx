@@ -9,10 +9,18 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
+
+    if (!db) {
+      setIsSubmitting(false);
+      setSubmitError('Firebase is not configured yet. Add your VITE_FIREBASE_* values in the environment file and try again.');
+      return;
+    }
     
     try {
       await addDoc(collection(db, 'messages'), {
@@ -31,7 +39,7 @@ const Contact: React.FC = () => {
     } catch (error) {
       console.error("Error adding document: ", error);
       setIsSubmitting(false);
-      alert("Failed to send message. Please try again.");
+      setSubmitError('Failed to send message. Please try again.');
     }
   };
 
@@ -166,6 +174,10 @@ const Contact: React.FC = () => {
                   <>Send Message <Send size={18} /></>
                 )}
               </button>
+
+              {submitError && (
+                <p className="text-sm text-red-400">{submitError}</p>
+              )}
             </form>
           </motion.div>
         </div>

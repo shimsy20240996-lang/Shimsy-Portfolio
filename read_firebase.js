@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 dotenv.config();
 
@@ -16,20 +16,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function testFirebase() {
+async function readMessages() {
   try {
-    const docRef = await addDoc(collection(db, "messages"), {
-      name: "Test Node",
-      email: "test@node.com",
-      message: "This is a test from Node",
-      createdAt: serverTimestamp()
+    const querySnapshot = await getDocs(collection(db, "messages"));
+    console.log(`Found ${querySnapshot.size} messages:\n`);
+    querySnapshot.forEach((doc) => {
+      console.log(`--- ID: ${doc.id} ---`);
+      console.log(doc.data());
+      console.log("");
     });
-    console.log("Document written with ID: ", docRef.id);
     process.exit(0);
   } catch (e) {
-    console.error("Error adding document: ", e);
+    console.error("Error reading documents: ", e);
     process.exit(1);
   }
 }
 
-testFirebase();
+readMessages();
