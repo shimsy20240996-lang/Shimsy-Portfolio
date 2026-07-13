@@ -23,7 +23,5 @@ const app = isFirebaseConfigured
     : initializeApp(firebaseConfig)
   : null;
 
-console.log("Firebase Config:", firebaseConfig);
-console.log("Is Firebase Configured:", isFirebaseConfigured);
 
 export const db = app ? getFirestore(app) : null;

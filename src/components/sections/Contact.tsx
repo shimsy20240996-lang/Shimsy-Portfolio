@@ -23,14 +23,14 @@ const Contact: React.FC = () => {
     }
     
     try {
-      const docRef = await addDoc(collection(db, 'messages'), {
+      await addDoc(collection(db, "messages"), {
         name: formData.name,
         email: formData.email,
         message: formData.message,
         createdAt: serverTimestamp()
       });
 
-      console.log("Document created:", docRef.id);
+      
       
       setIsSubmitting(false);
       setSubmitted(true);
