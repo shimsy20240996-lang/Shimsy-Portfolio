@@ -38,7 +38,7 @@ const Certificates: React.FC = () => {
                       <p className="text-slate-500 text-xs mt-1">{cert.date}</p>
                     </div>
                     {cert.url && (
-                      <a href={encodeURI(cert.url)} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent transition-colors">
+                      <a href={cert.url} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent transition-colors" title="View Certificate">
                         <ExternalLink size={18} />
                       </a>
                     )}
@@ -50,7 +50,7 @@ const Certificates: React.FC = () => {
             return cert.url ? (
               <motion.a
                 key={cert.id}
-                href={encodeURI(cert.url)}
+                href={cert.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
@@ -58,6 +58,7 @@ const Certificates: React.FC = () => {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="glass-panel p-6 rounded-2xl group hover:border-accent/40 transition-all cursor-pointer relative overflow-hidden"
+                title="Click to view certificate"
               >
                 {card}
               </motion.a>
