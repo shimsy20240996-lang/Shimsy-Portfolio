@@ -82,35 +82,35 @@ export const portfolioData: PortfolioData = {
       title: "Critical Thinking in the AI Era",
       issuer: "LinkedIn Learning",
       date: "2023",
-      url: "/Shimsy-Portfolio/Certificates/Critical%20Thinking%20in%20the%20AI%20Era.pdf"
+      url: "/Certificates/Critical%20Thinking%20in%20the%20AI%20Era.pdf"
     },
     {
       id: "cert-2",
       title: "AI for Beginners",
       issuer: "Coursera",
       date: "2023",
-      url: "/Shimsy-Portfolio/Certificates/AI%20for%20Beginners.pdf"
+      url: "/Certificates/AI%20for%20Beginners.pdf"
     },
     {
       id: "cert-3",
       title: "Data Analytics with Python",
       issuer: "DataCamp",
       date: "2024",
-      url: "/Shimsy-Portfolio/Certificates/DAP320.pdf"
+      url: "/Certificates/DAP320.pdf"
     },
     {
       id: "cert-4",
       title: "Data Science & Analytics",
       issuer: "IBM",
       date: "2024",
-      url: "/Shimsy-Portfolio/Certificates/Data%20Science%20%26%20Analytics.pdf"
+      url: "/Certificates/Data%20Science%20%26%20Analytics.pdf"
     },
     {
       id: "cert-5",
       title: "Cybersecurity ADBI E-Learning",
       issuer: "ADBI E-Learning",
       date: "2024",
-      url: "/Shimsy-Portfolio/Certificates/Cybersecurity-ADBI-E-Learning.pdf"
+      url: "/Certificates/Cybersecurity-ADBI-E-Learning.pdf"
     }
   ]
 };
