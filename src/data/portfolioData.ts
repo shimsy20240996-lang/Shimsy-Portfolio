@@ -22,15 +22,15 @@ export const portfolioData: PortfolioData = {
     {
       id: "edu-2",
       degree: "G.C.E. Advanced Level (A/L)",
-      institution: "Your School Name", // Please provide if you want me to update
-      period: "2021 - 2023",
-      description: "Studied Physical Science / Mathematics stream."
+      institution: "KM/KM/Shams C.C (National School)",
+      period: "2022",
+      description: "Successfully completed Advanced Level examinations."
     },
     {
       id: "edu-3",
       degree: "G.C.E. Ordinary Level (O/L)",
-      institution: "Your School Name", // Please provide if you want me to update
-      period: "2020",
+      institution: "KM/KM/Al-Hambra Vidyalaya",
+      period: "2019",
       description: "Successfully completed Ordinary Level examinations."
     }
   ],
