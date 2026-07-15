@@ -24,7 +24,7 @@ export const portfolioData: PortfolioData = {
       degree: "G.C.E. Advanced Level (A/L)",
       institution: "KM/KM/Shams C.C (National School)",
       period: "2022",
-      description: "Successfully completed Advanced Level examinations."
+      description: "Completed Advanced Level examinations in the Physical Science stream."
     },
     {
       id: "edu-3",
