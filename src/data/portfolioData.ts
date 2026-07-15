@@ -94,35 +94,35 @@ export const portfolioData: PortfolioData = {
     {
       id: "cert-1",
       title: "Critical Thinking in the AI Era",
-      issuer: "LinkedIn Learning",
+      issuer: "HP Life",
       date: "2023",
       url: "./Certificates/Critical%20Thinking%20in%20the%20AI%20Era.pdf"
     },
     {
       id: "cert-2",
       title: "AI for Beginners",
-      issuer: "Coursera",
+      issuer: "HP Life",
       date: "2023",
       url: "./Certificates/AI%20for%20Beginners.pdf"
     },
     {
       id: "cert-3",
       title: "Data Analytics with Python",
-      issuer: "DataCamp",
+      issuer: "IASSL",
       date: "2024",
       url: "./Certificates/DAP320.pdf"
     },
     {
       id: "cert-4",
       title: "Data Science & Analytics",
-      issuer: "IBM",
+      issuer: "HP Life",
       date: "2024",
       url: "./Certificates/Data%20Science%20%26%20Analytics.pdf"
     },
     {
       id: "cert-5",
       title: "Cybersecurity ADBI E-Learning",
-      issuer: "ADBI E-Learning",
+      issuer: "ADBInstitute",
       date: "2024",
       url: "./Certificates/Cybersecurity-ADBI-E-Learning.pdf"
     },
