@@ -9,7 +9,7 @@ export const portfolioData: PortfolioData = {
     email: "shimsyahamed03@gmail.com", // Placeholder
     github: "https://github.com/shimsy20240996-lang",
     linkedin: "https://www.linkedin.com/in/shimsy-ahamed-0bb128333/",
-    profileImage: "/profile.png",
+    profileImage: "./profile.png",
   },
   education: [
     {
@@ -18,6 +18,20 @@ export const portfolioData: PortfolioData = {
       institution: "IIT Sri Lanka", // Replace with actual
       period: "2024 - 2028",
       description: "Focused on software architecture, algorithms, and data science principles."
+    },
+    {
+      id: "edu-2",
+      degree: "G.C.E. Advanced Level (A/L)",
+      institution: "Your School Name", // Please provide if you want me to update
+      period: "2021 - 2023",
+      description: "Studied Physical Science / Mathematics stream."
+    },
+    {
+      id: "edu-3",
+      degree: "G.C.E. Ordinary Level (O/L)",
+      institution: "Your School Name", // Please provide if you want me to update
+      period: "2020",
+      description: "Successfully completed Ordinary Level examinations."
     }
   ],
   skills: [
@@ -82,42 +96,42 @@ export const portfolioData: PortfolioData = {
       title: "Critical Thinking in the AI Era",
       issuer: "LinkedIn Learning",
       date: "2023",
-      url: "/Certificates/Critical%20Thinking%20in%20the%20AI%20Era.pdf"
+      url: "./Certificates/Critical%20Thinking%20in%20the%20AI%20Era.pdf"
     },
     {
       id: "cert-2",
       title: "AI for Beginners",
       issuer: "Coursera",
       date: "2023",
-      url: "/Certificates/AI%20for%20Beginners.pdf"
+      url: "./Certificates/AI%20for%20Beginners.pdf"
     },
     {
       id: "cert-3",
       title: "Data Analytics with Python",
       issuer: "DataCamp",
       date: "2024",
-      url: "/Certificates/DAP320.pdf"
+      url: "./Certificates/DAP320.pdf"
     },
     {
       id: "cert-4",
       title: "Data Science & Analytics",
       issuer: "IBM",
       date: "2024",
-      url: "/Certificates/Data%20Science%20%26%20Analytics.pdf"
+      url: "./Certificates/Data%20Science%20%26%20Analytics.pdf"
     },
     {
       id: "cert-5",
       title: "Cybersecurity ADBI E-Learning",
       issuer: "ADBI E-Learning",
       date: "2024",
-      url: "/Certificates/Cybersecurity-ADBI-E-Learning.pdf"
+      url: "./Certificates/Cybersecurity-ADBI-E-Learning.pdf"
     },
     {
       id: "cert-6",
       title: "Elements of AI",
       issuer: "MinnaLearn & University of Helsinki",
       date: "2024",
-      url: "/Certificates/certificate-elements-of-ai.png"
+      url: "./Certificates/certificate-elements-of-ai.png"
     }
   ]
 };
