@@ -111,6 +111,13 @@ export const portfolioData: PortfolioData = {
       issuer: "ADBI E-Learning",
       date: "2024",
       url: "/Certificates/Cybersecurity-ADBI-E-Learning.pdf"
+    },
+    {
+      id: "cert-6",
+      title: "Elements of AI",
+      issuer: "MinnaLearn & University of Helsinki",
+      date: "2024",
+      url: "/Certificates/certificate-elements-of-ai.png"
     }
   ]
 };
