@@ -49,10 +49,10 @@ const ParticlesBackground: React.FC = () => {
           },
           particles: {
             color: {
-              value: ["#3b82f6", "#a855f7", "#ffffff"],
+              value: ["#10b981", "#34d399", "#ffffff"],
             },
             links: {
-              color: "#3b82f6",
+              color: "#10b981",
               distance: 150,
               enable: true,
               opacity: 0.15,

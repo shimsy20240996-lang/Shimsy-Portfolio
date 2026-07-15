@@ -15,10 +15,31 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-purple;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-purple-light;
   }
   
   .glass-panel {
-    @apply bg-surface/50 backdrop-blur-md border border-white/10 shadow-xl;
+    @apply bg-surface/50 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+  }
+
+  .glass-panel:hover {
+    @apply border-accent/40 shadow-[0_0_30px_rgba(16,185,129,0.3),_0_8px_32px_0_rgba(0,0,0,0.3)];
+  }
+
+  .glitch-text {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: 1px #10b981;
+    text-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  }
+
+  .glitch-text::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #10b981;
+    animation: glitch 3s infinite linear alternate-reverse;
   }
 }

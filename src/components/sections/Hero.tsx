@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
       {/* Background Elements */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
       <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-purple/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-blue-500/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000"></div>
+      <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-accent-light/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000"></div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 pt-10 lg:pt-0">
@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
             className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
           >
             Hi, I'm <br />
-            <span className="text-gradient">{portfolioData.personal.name}</span>
+            <span className="glitch-text" data-text={portfolioData.personal.name}>{portfolioData.personal.name}</span>
           </motion.h1>
           
           <motion.h2 
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
             className="flex flex-wrap gap-4 justify-center lg:justify-start"
           >
             <Link to="projects" smooth={true} duration={500} offset={-80}>
-              <button className="flex items-center gap-2 bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-xl font-medium transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]">
+              <button className="flex items-center gap-2 bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-xl font-medium transition-all shadow-[0_0_15px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(16,185,129,0.8)] border-2 border-accent hover:bg-transparent">
                 View Projects <ArrowRight size={18} />
               </button>
             </Link>
