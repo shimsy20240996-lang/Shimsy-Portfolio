@@ -77,7 +77,7 @@ export const portfolioData: PortfolioData = {
       title: "Treasure Island",
       description: "An interactive text-based adventure game where the player makes choices to navigate challenges and find the hidden treasure.",
       techStack: ["Python"],
-      imageUrl: "https://images.unsplash.com/photo-1541680670548-264639965dcb?q=80&w=1000&auto=format&fit=crop", // placeholder image of a treasure/island
+      imageUrl: "./treasure_island.png",
       githubUrl: "https://github.com/shimsy20240996-lang/Treasure-island-game.git",
     }
   ],
