@@ -68,26 +68,17 @@ export const portfolioData: PortfolioData = {
       id: "proj-1",
       title: "Airport Management System",
       description: "A comprehensive management system for airport operations including flight scheduling, passenger tracking, and baggage handling.",
-      techStack: ["Java", "MySQL", "JavaFX"],
+      techStack: ["Python", "Data Analysis"],
       imageUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1000&auto=format&fit=crop", // placeholder image of an airport
-      githubUrl: "#",
+      githubUrl: "https://github.com/shimsy20240996-lang/airport-data-analysis-python.git",
     },
     {
       id: "proj-2",
-      title: "AI Image Classifier",
-      description: "A deep learning model trained to classify objects in natural images with high accuracy using PyTorch.",
-      techStack: ["Python", "PyTorch", "OpenCV"],
-      imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1000&auto=format&fit=crop", // placeholder image of code/AI
-      githubUrl: "#",
-    },
-    {
-      id: "proj-3",
-      title: "E-Commerce Dashboard",
-      description: "A responsive admin dashboard for an e-commerce platform with real-time sales data visualization.",
-      techStack: ["React", "Tailwind CSS", "Recharts"],
-      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop", // placeholder image of dashboard
-      liveUrl: "#",
-      githubUrl: "#",
+      title: "Treasure Island",
+      description: "An interactive text-based adventure game where the player makes choices to navigate challenges and find the hidden treasure.",
+      techStack: ["Python"],
+      imageUrl: "https://images.unsplash.com/photo-1541680670548-264639965dcb?q=80&w=1000&auto=format&fit=crop", // placeholder image of a treasure/island
+      githubUrl: "https://github.com/shimsy20240996-lang/Treasure-island-game.git",
     }
   ],
   certificates: [
