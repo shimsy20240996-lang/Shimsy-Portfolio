@@ -5,11 +5,21 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-background: 250 250 250; /* #fafafa */
+    --color-surface: 255 255 255; /* #ffffff */
+  }
+  
+  .dark {
+    --color-background: 15 15 15; /* #0f0f0f */
+    --color-surface: 26 26 26; /* #1a1a1a */
+  }
+
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-slate-200 font-sans antialiased overflow-x-hidden;
+    @apply bg-background text-slate-900 dark:text-slate-200 font-sans antialiased overflow-x-hidden transition-colors duration-300;
   }
 }
 
@@ -19,11 +29,11 @@
   }
   
   .glass-panel {
-    @apply bg-surface/50 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+    @apply bg-surface/50 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
   }
 
   .glass-panel:hover {
-    @apply border-accent/40 shadow-[0_0_30px_rgba(16,185,129,0.3),_0_8px_32px_0_rgba(0,0,0,0.3)];
+    @apply border-accent/40 shadow-[0_0_30px_rgba(16,185,129,0.2),_0_8px_32px_0_rgba(0,0,0,0.1)] dark:shadow-[0_0_30px_rgba(16,185,129,0.3),_0_8px_32px_0_rgba(0,0,0,0.3)];
   }
 
   .glitch-text {

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,8 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#0f0f0f", // Dark black from vanilla
-        surface: "#1a1a1a", // rgba(26,26,26) from vanilla
+        background: "rgb(var(--color-background) / <alpha-value>)",
+        surface: "rgb(var(--color-surface) / <alpha-value>)",
         accent: {
           light: "#34d399",
           DEFAULT: "#10b981", // Green primary

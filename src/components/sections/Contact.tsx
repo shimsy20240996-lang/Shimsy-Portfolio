@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3 text-slate-900 dark:text-white">
             <MessageSquare className="text-accent" size={32} />
             Get in <span className="text-gradient">Touch</span>
           </h2>
@@ -74,29 +74,29 @@ const Contact: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-semibold mb-6">Let's talk about everything!</h3>
-            <p className="text-slate-400 mb-10 text-lg">
+            <h3 className="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">Let's talk about everything!</h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-10 text-lg">
               Feel free to reach out for collaborations, opportunities, or just a friendly chat. I'm always open to discussing new projects and creative ideas.
             </p>
 
             <div className="space-y-6">
               <a href={`mailto:${portfolioData.personal.email}`} className="flex items-center gap-4 group">
-                <div className="w-14 h-14 bg-surface border border-white/10 rounded-full flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                <div className="w-14 h-14 bg-surface border border-slate-300 dark:border-white/10 rounded-full flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                   <Mail size={24} />
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 font-medium">Email Me</p>
-                  <p className="text-lg font-medium group-hover:text-accent transition-colors">{portfolioData.personal.email}</p>
+                  <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-accent dark:group-hover:text-accent transition-colors">{portfolioData.personal.email}</p>
                 </div>
               </a>
 
-              <div className="pt-8 border-t border-white/10">
+              <div className="pt-8 border-t border-slate-200 dark:border-white/10">
                 <p className="text-sm text-slate-500 font-medium mb-4">Connect on Socials</p>
                 <div className="flex gap-4">
-                  <a href={portfolioData.personal.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-surface border border-white/10 rounded-full flex items-center justify-center hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
+                  <a href={portfolioData.personal.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-surface border border-slate-300 dark:border-white/10 rounded-full flex items-center justify-center text-slate-700 dark:text-white hover:bg-slate-200 dark:hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
                     <FaGithub size={20} />
                   </a>
-                  <a href={portfolioData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-surface border border-white/10 rounded-full flex items-center justify-center hover:bg-[#0077b5] hover:border-[#0077b5] hover:-translate-y-1 transition-all duration-300">
+                  <a href={portfolioData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-surface border border-slate-300 dark:border-white/10 rounded-full flex items-center justify-center text-slate-700 dark:text-white hover:text-white hover:bg-[#0077b5] hover:border-[#0077b5] hover:-translate-y-1 transition-all duration-300">
                     <FaLinkedin size={20} />
                   </a>
                 </div>
@@ -117,14 +117,14 @@ const Contact: React.FC = () => {
                 <div className="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mb-4">
                   <Send size={32} />
                 </div>
-                <h4 className="text-2xl font-bold mb-2">Message Sent!</h4>
-                <p className="text-slate-400">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                <h4 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white">Message Sent!</h4>
+                <p className="text-slate-600 dark:text-slate-400">Thank you for reaching out. I'll get back to you as soon as possible.</p>
               </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-slate-300 ml-1">Your Name</label>
+                <label htmlFor="name" className="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1">Your Name</label>
                 <input
                   type="text"
                   id="name"
@@ -132,13 +132,13 @@ const Contact: React.FC = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-surface/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                  className="w-full bg-slate-100 dark:bg-surface/50 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
                   placeholder="John Doe"
                 />
               </div>
               
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-slate-300 ml-1">Email Address</label>
+                <label htmlFor="email" className="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1">Email Address</label>
                 <input
                   type="email"
                   id="email"
@@ -146,13 +146,13 @@ const Contact: React.FC = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-surface/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                  className="w-full bg-slate-100 dark:bg-surface/50 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
                   placeholder="john@example.com"
                 />
               </div>
               
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-slate-300 ml-1">Message</label>
+                <label htmlFor="message" className="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -160,7 +160,7 @@ const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full bg-surface/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
+                  className="w-full bg-slate-100 dark:bg-surface/50 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
                   placeholder="Hello, I'd like to talk about..."
                 />
               </div>

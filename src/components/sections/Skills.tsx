@@ -38,17 +38,17 @@ const Skills: React.FC = () => {
                   <div className="p-3 bg-accent/10 rounded-lg text-accent">
                     <Icon size={24} />
                   </div>
-                  <h3 className="text-xl font-bold">{category.title}</h3>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">{category.title}</h3>
                 </div>
 
                 <div className="space-y-6">
                   {category.skills.map((skill, index) => (
                     <div key={skill.name}>
                       <div className="flex justify-between mb-2">
-                        <span className="font-medium text-slate-300">{skill.name}</span>
-                        <span className="text-slate-400 text-sm">{skill.level}%</span>
+                        <span className="font-medium text-slate-700 dark:text-slate-300">{skill.name}</span>
+                        <span className="text-slate-600 dark:text-slate-400 text-sm">{skill.level}%</span>
                       </div>
-                      <div className="h-2 w-full bg-background rounded-full overflow-hidden">
+                      <div className="h-2 w-full bg-slate-200 dark:bg-background rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}

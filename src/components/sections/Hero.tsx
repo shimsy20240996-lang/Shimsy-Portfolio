@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl md:text-3xl font-medium text-slate-300 mb-6"
+            className="text-2xl md:text-3xl font-medium text-slate-700 dark:text-slate-300 mb-6"
           >
             {portfolioData.personal.role}
           </motion.h2>
@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg text-slate-400 mb-10 max-w-2xl leading-relaxed"
+            className="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-2xl leading-relaxed"
           >
             {portfolioData.personal.tagline}
           </motion.p>
@@ -65,12 +65,12 @@ const Hero: React.FC = () => {
             </Link>
             
             <Link to="contact" smooth={true} duration={500} offset={-80}>
-              <button className="px-6 py-3 rounded-xl font-medium text-white border border-white/20 hover:bg-white/5 transition-all">
+              <button className="px-6 py-3 rounded-xl font-medium text-slate-900 dark:text-white border border-slate-300 dark:border-white/20 hover:bg-slate-100 dark:hover:bg-white/5 transition-all">
                 Contact Me
               </button>
             </Link>
 
-            <a href="/cv.pdf" download className="flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-white border border-purple/30 bg-purple/10 hover:bg-purple/20 transition-all">
+            <a href="/cv.pdf" download className="flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-slate-900 dark:text-white border border-purple/30 bg-purple/5 dark:bg-purple/10 hover:bg-purple/10 dark:hover:bg-purple/20 transition-all">
               <Download size={18} /> Download CV
             </a>
           </motion.div>
@@ -96,8 +96,8 @@ const Hero: React.FC = () => {
             </div>
             
             {/* Floating accent elements */}
-            <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-surface border border-white/10 rounded-2xl rotate-12 -z-10 group-hover:rotate-45 transition-transform duration-500"></div>
-            <div className="absolute -top-4 -left-4 w-12 h-12 bg-accent/20 border border-accent/30 rounded-full -z-10 group-hover:-translate-y-4 group-hover:-translate-x-4 transition-transform duration-500"></div>
+            <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-surface border border-slate-200 dark:border-white/10 rounded-2xl rotate-12 -z-10 group-hover:rotate-45 transition-transform duration-500"></div>
+            <div className="absolute -top-4 -left-4 w-12 h-12 bg-accent/10 dark:bg-accent/20 border border-accent/30 rounded-full -z-10 group-hover:-translate-y-4 group-hover:-translate-x-4 transition-transform duration-500"></div>
           </div>
         </motion.div>
       </div>
