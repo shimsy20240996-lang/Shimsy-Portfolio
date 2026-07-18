@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Layers } from 'lucide-react';
 import { FaDatabase, FaChartPie, FaHtml5 } from 'react-icons/fa';
 import { SiPython, SiJavascript, SiReact, SiScikitlearn, SiTensorflow, SiPandas, SiNumpy, SiPhp, SiMongodb } from 'react-icons/si';
 
@@ -27,12 +28,14 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="mb-12"
+          className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-3 flex items-center gap-3 text-slate-900 dark:text-white">
-            <span className="text-accent text-3xl md:text-4xl leading-none">•</span> Tech Stack
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3 text-slate-900 dark:text-white">
+            <Layers className="text-accent" size={32} />
+            Tech <span className="text-gradient">Stack</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl">
+          <div className="w-20 h-1 bg-accent rounded-full mx-auto mb-6"></div>
+          <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
             Tools and technologies I work with daily
           </p>
         </motion.div>
@@ -42,7 +45,7 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-slate-100 dark:bg-[#13131a]/80 backdrop-blur-md border border-slate-200 dark:border-white/5 rounded-3xl p-8 md:p-12 shadow-lg"
+          className="glass-panel p-8 md:p-12 rounded-2xl"
         >
           <div className="flex flex-wrap gap-4">
             {techStack.map((tech, index) => {
