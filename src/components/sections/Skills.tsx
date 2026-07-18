@@ -30,7 +30,7 @@ const Skills: React.FC = () => {
           className="mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-3 flex items-center gap-3 text-slate-900 dark:text-white">
-            <span className="text-indigo-500 text-3xl md:text-4xl leading-none">•</span> Tech Stack
+            <span className="text-accent text-3xl md:text-4xl leading-none">•</span> Tech Stack
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl">
             Tools and technologies I work with daily
@@ -54,9 +54,9 @@ const Skills: React.FC = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: 0.1 + (index * 0.05) }}
-                  className="flex items-center gap-3 px-6 py-3 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full hover:bg-slate-50 dark:hover:bg-white/10 hover:border-indigo-500/50 transition-all cursor-default shadow-sm dark:shadow-none group"
+                  className="flex items-center gap-3 px-6 py-3 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full hover:bg-slate-50 dark:hover:bg-white/10 hover:border-accent/50 transition-all cursor-default shadow-sm dark:shadow-none group"
                 >
-                  <Icon className="text-indigo-600 dark:text-indigo-400 text-xl group-hover:scale-110 transition-transform" />
+                  <Icon className="text-accent text-xl group-hover:scale-110 transition-transform" />
                   <span className="font-semibold text-slate-800 dark:text-slate-200 tracking-wide">
                     {tech.name}
                   </span>
