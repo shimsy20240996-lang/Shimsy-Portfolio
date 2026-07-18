@@ -94,7 +94,7 @@ const CVSection: React.FC = () => {
                   <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white border-b border-slate-200 dark:border-white/10 pb-4">Education History</h3>
                   <div className="space-y-8">
                     {portfolioData.education.map((edu) => (
-                      <div key={edu.id} className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-accent before:rounded-full before:shadow-[0_0_10px_rgba(59,130,246,0.5)] after:absolute after:left-[5px] after:top-5 after:w-0.5 after:h-full after:bg-slate-300 dark:after:bg-white/10 last:after:hidden">
+                      <div key={edu.id} className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-accent before:rounded-full before:shadow-[0_0_10px_rgba(16,185,129,0.5)] after:absolute after:left-[5px] after:top-5 after:w-0.5 after:h-full after:bg-slate-300 dark:after:bg-white/10 last:after:hidden">
                         <h4 className="text-xl font-bold text-slate-900 dark:text-white">{edu.degree}</h4>
                         <div className="flex items-center gap-3 mt-2 mb-3">
                           <span className="text-accent font-medium">{edu.institution}</span>

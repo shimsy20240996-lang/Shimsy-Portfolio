@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
           </p>
           
           <p className="flex items-center gap-1.5">
-            Designed & Built with <Heart size={14} className="text-rose-500" />
+            Designed & Built with <Heart size={14} className="text-accent" />
           </p>
         </div>
       </div>
