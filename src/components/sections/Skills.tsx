@@ -1,9 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { portfolioData } from '../../data/portfolioData';
-import { Code2, Terminal, Layers } from 'lucide-react';
+import { FaDatabase, FaChartPie, FaHtml5 } from 'react-icons/fa';
+import { SiPython, SiJavascript, SiReact, SiScikitlearn, SiTensorflow, SiPandas, SiNumpy, SiPhp, SiMongodb } from 'react-icons/si';
 
-const icons = [Code2, Terminal, Layers];
+const techStack = [
+  { name: 'Python', icon: SiPython },
+  { name: 'JavaScript', icon: SiJavascript },
+  { name: 'React.js', icon: SiReact },
+  { name: 'SQL', icon: FaDatabase },
+  { name: 'Power BI', icon: FaChartPie },
+  { name: 'Scikit-learn', icon: SiScikitlearn },
+  { name: 'TensorFlow', icon: SiTensorflow },
+  { name: 'HTML / CSS', icon: FaHtml5 },
+  { name: 'Pandas', icon: SiPandas },
+  { name: 'NumPy', icon: SiNumpy },
+  { name: 'PHP', icon: SiPhp },
+  { name: 'MongoDB', icon: SiMongodb },
+];
 
 const Skills: React.FC = () => {
   return (
@@ -14,58 +27,44 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Technical <span className="text-gradient">Skills</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-3 flex items-center gap-3 text-slate-900 dark:text-white">
+            <span className="text-indigo-500 text-3xl md:text-4xl leading-none">•</span> Tech Stack
           </h2>
-          <div className="w-20 h-1 bg-accent rounded-full mx-auto"></div>
+          <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl">
+            Tools and technologies I work with daily
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {portfolioData.skills.map((category, catIndex) => {
-            const Icon = icons[catIndex % icons.length];
-            return (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-                className="glass-panel p-8 rounded-2xl border-t-4 border-t-accent hover:-translate-y-2 transition-transform duration-300"
-              >
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="p-3 bg-accent/10 rounded-lg text-accent">
-                    <Icon size={24} />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">{category.title}</h3>
-                </div>
-
-                <div className="space-y-6">
-                  {category.skills.map((skill, index) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between mb-2">
-                        <span className="font-medium text-slate-700 dark:text-slate-300">{skill.name}</span>
-                        <span className="text-slate-600 dark:text-slate-400 text-sm">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 w-full bg-slate-200 dark:bg-background rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: 0.5 + (index * 0.1) }}
-                          className="h-full bg-gradient-to-r from-accent to-purple rounded-full relative"
-                        >
-                          <div className="absolute top-0 right-0 bottom-0 left-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px] animate-[shimmer_2s_linear_infinite]"></div>
-                        </motion.div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="bg-slate-100 dark:bg-[#13131a]/80 backdrop-blur-md border border-slate-200 dark:border-white/5 rounded-3xl p-8 md:p-12 shadow-lg"
+        >
+          <div className="flex flex-wrap gap-4">
+            {techStack.map((tech, index) => {
+              const Icon = tech.icon;
+              return (
+                <motion.div
+                  key={tech.name}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.1 + (index * 0.05) }}
+                  className="flex items-center gap-3 px-6 py-3 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full hover:bg-slate-50 dark:hover:bg-white/10 hover:border-indigo-500/50 transition-all cursor-default shadow-sm dark:shadow-none group"
+                >
+                  <Icon className="text-indigo-600 dark:text-indigo-400 text-xl group-hover:scale-110 transition-transform" />
+                  <span className="font-semibold text-slate-800 dark:text-slate-200 tracking-wide">
+                    {tech.name}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
