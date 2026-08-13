@@ -1,6 +1,5 @@
 import React from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { Heart } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 
@@ -51,7 +50,7 @@ const Footer: React.FC = () => {
           </p>
           
           <p className="flex items-center gap-1.5">
-            Designed & Built with <Heart size={14} className="text-accent" />
+            Designed & Built with Sirius Intelligence
           </p>
         </div>
       </div>
