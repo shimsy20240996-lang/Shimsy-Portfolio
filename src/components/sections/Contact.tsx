@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase';
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState('');
@@ -26,6 +26,7 @@ const Contact: React.FC = () => {
       await addDoc(collection(db, "messages"), {
         name: formData.name,
         email: formData.email,
+        subject: formData.subject,
         message: formData.message,
         createdAt: serverTimestamp()
       });
@@ -34,7 +35,7 @@ const Contact: React.FC = () => {
       
       setIsSubmitting(false);
       setSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
       
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitted(false), 5000);
@@ -133,7 +134,7 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full bg-slate-100 dark:bg-surface/50 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                  placeholder="John Doe"
+                  placeholder="your name"
                 />
               </div>
               
@@ -147,7 +148,21 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full bg-slate-100 dark:bg-surface/50 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                  placeholder="john@example.com"
+                  placeholder="your mail"
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <label htmlFor="subject" className="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full bg-slate-100 dark:bg-surface/50 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                  placeholder="your subject"
                 />
               </div>
               
@@ -161,7 +176,7 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   rows={5}
                   className="w-full bg-slate-100 dark:bg-surface/50 border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
-                  placeholder="Hello, I'd like to talk about..."
+                  placeholder="your message"
                 />
               </div>
               
