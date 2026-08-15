@@ -17,14 +17,14 @@ export default {
         border: "rgb(var(--color-border) / <alpha-value>)",
         panel: "rgb(var(--color-panel) / <alpha-value>)",
         primary: {
-          light: "#d946ef", // Fuchsia 500
-          DEFAULT: "#c026d3", // Fuchsia 600
-          dark: "#a21caf", // Fuchsia 700
+          light: "#60A5FA", // Blue 400
+          DEFAULT: "#3B82F6", // Blue 500
+          dark: "#2563EB", // Blue 600
         },
         accent: {
-          light: "#c084fc", // Purple 400
-          DEFAULT: "#a855f7", // Purple 500
-          dark: "#9333ea", // Purple 600
+          light: "#22D3EE", // Cyan 400
+          DEFAULT: "#06B6D4", // Cyan 500
+          dark: "#0891B2", // Cyan 600
         },
         navy: {
           light: "#1e293b", // Slate 800
