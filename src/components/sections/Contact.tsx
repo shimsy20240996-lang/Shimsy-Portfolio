@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../../data/portfolioData';
 import { Mail, Send, MessageSquare } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase';
 const Contact: React.FC = () => {
@@ -78,28 +78,50 @@ const Contact: React.FC = () => {
               Feel free to reach out for collaborations, opportunities, or just a friendly chat. I'm always open to discussing new projects and creative ideas.
             </p>
 
-            <div className="space-y-6">
-              <a href={`mailto:${portfolioData.personal.email}`} className="flex items-center gap-4 group">
-                <div className="w-14 h-14 bg-background border border-border/10 rounded-full flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-text-main transition-colors duration-300">
-                  <Mail size={24} />
+            <div className="space-y-4">
+              {/* Email Card */}
+              <a href={`mailto:${portfolioData.personal.email}`} className="flex items-center gap-4 p-4 bg-panel/50 hover:bg-panel border border-border/10 rounded-2xl transition-all duration-300 group hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-text-main transition-colors duration-300">
+                  <Mail size={22} />
                 </div>
                 <div>
-                  <p className="text-sm text-text-muted font-medium">Email Me</p>
-                  <p className="text-lg font-medium text-text-main group-hover:text-accent transition-colors">{portfolioData.personal.email}</p>
+                  <h4 className="font-semibold text-text-main group-hover:text-accent transition-colors text-lg">Email</h4>
+                  <p className="text-sm text-text-muted">{portfolioData.personal.email}</p>
                 </div>
               </a>
 
-              <div className="pt-8 border-t border-border/10">
-                <p className="text-sm text-text-muted font-medium mb-4">Connect on Socials</p>
-                <div className="flex gap-4">
-                  <a href={portfolioData.personal.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-background border border-border/10 rounded-full flex items-center justify-center text-text-main hover:bg-text-main/10 hover:-translate-y-1 transition-all duration-300">
-                    <FaGithub size={20} />
-                  </a>
-                  <a href={portfolioData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-background border border-border/10 rounded-full flex items-center justify-center text-text-main hover:bg-[#0077b5] hover:border-[#0077b5] hover:-translate-y-1 transition-all duration-300">
-                    <FaLinkedin size={20} />
-                  </a>
+              {/* LinkedIn Card */}
+              <a href={portfolioData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-panel/50 hover:bg-panel border border-border/10 rounded-2xl transition-all duration-300 group hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent group-hover:bg-[#0077b5] group-hover:text-white transition-colors duration-300">
+                  <FaLinkedin size={22} />
                 </div>
-              </div>
+                <div>
+                  <h4 className="font-semibold text-text-main group-hover:text-accent transition-colors text-lg">LinkedIn</h4>
+                  <p className="text-sm text-text-muted">Connect professionally</p>
+                </div>
+              </a>
+
+              {/* GitHub Card */}
+              <a href={portfolioData.personal.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-panel/50 hover:bg-panel border border-border/10 rounded-2xl transition-all duration-300 group hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent group-hover:bg-text-main group-hover:text-background transition-colors duration-300">
+                  <FaGithub size={22} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-text-main group-hover:text-accent transition-colors text-lg">GitHub</h4>
+                  <p className="text-sm text-text-muted">View my source code</p>
+                </div>
+              </a>
+
+              {/* WhatsApp Card */}
+              <a href="https://wa.me/0776404824" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-panel/50 hover:bg-panel border border-border/10 rounded-2xl transition-all duration-300 group hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent group-hover:bg-[#25D366] group-hover:text-white transition-colors duration-300">
+                  <FaWhatsapp size={22} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-text-main group-hover:text-accent transition-colors text-lg">WhatsApp</h4>
+                  <p className="text-sm text-text-muted">Chat directly</p>
+                </div>
+              </a>
             </div>
           </motion.div>
 
