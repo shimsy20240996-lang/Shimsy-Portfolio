@@ -79,6 +79,14 @@ export const portfolioData: PortfolioData = {
       techStack: ["Python"],
       imageUrl: "./treasure_island.png",
       githubUrl: "https://github.com/shimsy20240996-lang/Treasure-island-game.git",
+    },
+    {
+      id: "proj-3",
+      title: "Interactive PowerBI Dashboard",
+      description: "A comprehensive PowerBI dashboard providing deep data visualization and business intelligence insights.",
+      techStack: ["PowerBI", "Data Analysis", "Data Visualization"],
+      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop", // placeholder image of a data dashboard
+      liveUrl: "https://app.powerbi.com/groups/me/reports/c9fa07f8-7bcc-443b-a62f-3ff9fc3ed1b0/2d7495750ee077602735?experience=power-bi",
     }
   ],
   certificates: [
