@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from '../context/ThemeContext';
 
 const navLinks = [
   { name: 'Home', to: 'home' },
@@ -17,7 +16,6 @@ const navLinks = [
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,24 +65,10 @@ const Navbar: React.FC = () => {
               </Link>
             </motion.div>
           ))}
-          <button 
-            onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-white/10 text-slate-300 transition-colors ml-4 focus:outline-none"
-            aria-label="Toggle Theme"
-          >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
         </nav>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-4">
-          <button 
-            onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-white/10 text-slate-300 transition-colors focus:outline-none"
-            aria-label="Toggle Theme"
-          >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
           <button 
             onClick={() => setIsOpen(!isOpen)}
             className="text-slate-300 hover:text-white transition-colors"

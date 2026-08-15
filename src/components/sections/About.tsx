@@ -28,10 +28,20 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="glass-panel p-8 rounded-2xl relative overflow-hidden group"
+            className="glass-panel p-8 rounded-2xl relative overflow-hidden group flex flex-col items-center text-center lg:items-start lg:text-left"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-10 -mt-10 transition-transform group-hover:scale-150 duration-700"></div>
-            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+            
+            <div className="relative mb-8 w-48 h-48 sm:w-56 sm:h-56 mx-auto group-hover:scale-105 transition-transform duration-500">
+              <div className="absolute inset-[-15px] border-2 border-dashed border-primary rounded-full animate-[float_6s_ease-in-out_infinite] opacity-50 z-0"></div>
+              <img 
+                src={portfolioData.personal.profileImage.replace('./', '/')} 
+                alt="Profile" 
+                className="w-full h-full object-cover rounded-full filter grayscale-[10%] contrast-110 group-hover:grayscale-0 group-hover:contrast-125 transition-all duration-500 shadow-[0_0_30px_rgba(192,38,211,0.3)] group-hover:shadow-[0_0_50px_rgba(192,38,211,0.6)] relative z-10" 
+              />
+            </div>
+
+            <h3 className="text-2xl font-semibold mb-6 flex items-center justify-center lg:justify-start gap-2 w-full">
               <BookOpen className="text-primary" size={24} />
               My Journey
             </h3>
