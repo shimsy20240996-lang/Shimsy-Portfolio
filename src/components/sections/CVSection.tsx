@@ -27,7 +27,7 @@ const CVSection: React.FC = () => {
             <div className="w-20 h-1 bg-accent rounded-full"></div>
           </div>
           
-          <a href="/cv.pdf" download className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all duration-200 bg-background border border-white/10 rounded-xl hover:bg-white/5 hover:border-accent/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent overflow-hidden">
+          <a href="/cv.pdf" download className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all duration-300 bg-gradient-to-r from-primary to-accent rounded-xl hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(192,38,211,0.8)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent focus:ring-offset-background overflow-hidden border-none animate-pulse-glow">
             <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black/50"></span>
             <span className="relative flex items-center gap-2">
               <Download size={20} className="group-hover:-translate-y-1 transition-transform" />
