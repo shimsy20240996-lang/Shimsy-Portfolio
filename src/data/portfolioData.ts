@@ -123,6 +123,27 @@ export const portfolioData: PortfolioData = {
       issuer: "MinnaLearn & University of Helsinki",
       date: "2026",
       url: "./Certificates/certificate-elements-of-ai.png"
+    },
+    {
+      id: "cert-7",
+      title: "Machine Learning for Beginners",
+      issuer: "Simplilearn",
+      date: "2026",
+      url: "./Certificates/Machine_Learning_for_Beginners_Simplilearn.pdf"
+    },
+    {
+      id: "cert-8",
+      title: "Python for Beginners",
+      issuer: "University of Moratuwa",
+      date: "2026",
+      url: "./Certificates/Python_for_Beginners_Moratuwa.pdf"
+    },
+    {
+      id: "cert-9",
+      title: "Data Science for Beginners",
+      issuer: "Cursa",
+      date: "2026",
+      url: "./Certificates/Data_Science_for_Beginners_Cursa.jpg"
     }
   ]
 };
