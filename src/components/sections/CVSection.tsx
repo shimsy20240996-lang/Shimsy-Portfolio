@@ -7,7 +7,7 @@ const CVSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'overview' | 'education' | 'skills'>('overview');
 
   return (
-    <section id="cv" className="py-24 relative overflow-hidden bg-surface">
+    <section id="cv" className="py-24 relative overflow-hidden bg-transparent">
       {/* Background styling */}
       <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/5 via-surface to-surface -z-10"></div>
       

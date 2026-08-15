@@ -6,7 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="py-24 relative bg-background">
+    <section id="projects" className="py-24 relative bg-transparent">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

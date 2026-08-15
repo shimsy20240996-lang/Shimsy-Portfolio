@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative bg-surface">
+    <section id="contact" className="py-24 relative bg-transparent">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

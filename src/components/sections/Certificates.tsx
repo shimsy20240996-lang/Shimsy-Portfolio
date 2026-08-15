@@ -7,7 +7,7 @@ const Certificates: React.FC = () => {
   const [selectedCert, setSelectedCert] = useState<any>(null);
 
   return (
-    <section id="certificates" className="py-24 bg-surface relative">
+    <section id="certificates" className="py-24 bg-transparent relative">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
