@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 
 const navLinks = [
   { name: 'Home', to: 'home' },
@@ -16,6 +17,7 @@ const navLinks = [
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +41,7 @@ const Navbar: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold tracking-tighter font-display"
           >
-            <span className="text-white transition-colors duration-300">Shimsy</span>
+            <span className="text-text-main transition-colors duration-300">Shimsy</span>
             <span className="text-accent">.</span>
           </motion.div>
         </Link>
@@ -58,20 +60,34 @@ const Navbar: React.FC = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="text-sm font-medium text-slate-300 hover:text-white hover:text-shadow-sm transition-colors cursor-pointer relative group"
+                className="text-sm font-medium text-text-muted hover:text-text-main hover:text-shadow-sm transition-colors cursor-pointer relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full shadow-[0_0_8px_rgba(192,38,211,0.8)]"></span>
               </Link>
             </motion.div>
           ))}
+          <button 
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-text-main/10 text-text-muted transition-colors ml-4 focus:outline-none"
+            aria-label="Toggle Theme"
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
         </nav>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-4">
           <button 
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-text-main/10 text-text-muted transition-colors focus:outline-none"
+            aria-label="Toggle Theme"
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="text-slate-300 hover:text-white transition-colors"
+            className="text-text-muted hover:text-text-main transition-colors"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -96,7 +112,7 @@ const Navbar: React.FC = () => {
                   duration={500}
                   offset={-80}
                   onClick={() => setIsOpen(false)}
-                  className="text-base font-medium text-slate-300 hover:text-primary hover:translate-x-2 transition-all cursor-pointer"
+                  className="text-base font-medium text-text-muted hover:text-primary hover:translate-x-2 transition-all cursor-pointer"
                 >
                   {link.name}
                 </Link>

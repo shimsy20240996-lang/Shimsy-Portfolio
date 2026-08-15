@@ -13,7 +13,7 @@ import { ThemeProvider } from './context/ThemeContext';
 function App() {
   return (
     <ThemeProvider>
-      <div className="bg-background min-h-screen text-slate-300 selection:bg-accent/30 selection:text-white relative transition-colors duration-300">
+      <div className="bg-background min-h-screen text-text-muted selection:bg-accent/30 selection:text-text-main relative transition-colors duration-300">
         <ParticlesBackground />
         <div className="relative z-10">
           <Navbar />

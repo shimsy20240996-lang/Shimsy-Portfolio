@@ -10,6 +10,12 @@ export default {
       colors: {
         background: "rgb(var(--color-background) / <alpha-value>)",
         surface: "rgb(var(--color-surface) / <alpha-value>)",
+        text: {
+          main: "rgb(var(--color-text-main) / <alpha-value>)",
+          muted: "rgb(var(--color-text-muted) / <alpha-value>)",
+        },
+        border: "rgb(var(--color-border) / <alpha-value>)",
+        panel: "rgb(var(--color-panel) / <alpha-value>)",
         primary: {
           light: "#d946ef", // Fuchsia 500
           DEFAULT: "#c026d3", // Fuchsia 600

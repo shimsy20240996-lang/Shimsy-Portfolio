@@ -35,7 +35,7 @@ const Skills: React.FC = () => {
             Tech <span className="text-gradient">Stack</span>
           </h2>
           <div className="w-20 h-1 bg-accent rounded-full mx-auto mb-6"></div>
-          <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-text-muted text-lg md:text-xl max-w-2xl mx-auto">
             Tools and technologies I work with daily
           </p>
         </motion.div>
@@ -45,7 +45,7 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="glass-panel p-8 md:p-12 rounded-2xl border border-white/5 bg-[#0b1129]/50"
+          className="glass-panel p-8 md:p-12 rounded-2xl border border-border/10 bg-panel/50"
         >
           <div className="flex flex-wrap gap-4 justify-center">
             {techStack.map((tech, index) => {
@@ -57,10 +57,10 @@ const Skills: React.FC = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: 0.1 + (index * 0.05) }}
-                  className="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:border-accent/50 hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all cursor-default group"
+                  className="flex items-center gap-3 px-6 py-3 bg-text-main/5 border border-border/10 rounded-full hover:bg-text-main/10 hover:border-accent/50 hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all cursor-default group"
                 >
                   <Icon className="text-accent text-xl group-hover:scale-110 transition-transform" />
-                  <span className="font-semibold text-slate-200 tracking-wide">
+                  <span className="font-semibold text-text-main tracking-wide">
                     {tech.name}
                   </span>
                 </motion.div>

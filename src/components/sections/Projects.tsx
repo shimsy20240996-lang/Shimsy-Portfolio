@@ -45,9 +45,9 @@ const Projects: React.FC = () => {
               </div>
               
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-6">
-                <div className="bg-[#0b1129]/90 backdrop-blur-md rounded-xl p-4 border border-white/5 flex-grow shadow-lg">
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors text-white">{project.title}</h3>
-                  <p className="text-slate-400 text-sm mb-6 line-clamp-3">
+                <div className="bg-panel/90 backdrop-blur-md rounded-xl p-4 border border-border/10 flex-grow shadow-lg">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors text-text-main">{project.title}</h3>
+                  <p className="text-text-muted text-sm mb-6 line-clamp-3">
                     {project.description}
                   </p>
                   
@@ -59,13 +59,13 @@ const Projects: React.FC = () => {
                     ))}
                   </div>
 
-                  <div className="flex gap-3 pt-4 border-t border-white/10">
+                  <div className="flex gap-3 pt-4 border-t border-border/10">
                     {project.githubUrl && (
                       <a 
                         href={project.githubUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg hover:bg-white/5 border border-white/10 text-slate-300 text-sm font-medium transition-colors"
+                        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg hover:bg-text-main/5 border border-border/10 text-text-muted text-sm font-medium transition-colors"
                       >
                         <FaGithub size={16} /> Code
                       </a>

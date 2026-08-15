@@ -6,24 +6,34 @@
 
 @layer base {
   :root {
-    --color-background: 5 5 5; /* #050505 */
-    --color-surface: 10 10 10; /* #0a0a0a */
+    /* Light Mode */
+    --color-background: 248 250 252; /* slate-50 */
+    --color-surface: 255 255 255; /* white */
+    --color-text-main: 15 23 42; /* slate-900 */
+    --color-text-muted: 71 85 105; /* slate-600 */
+    --color-border: 15 23 42; /* slate-900, used with opacity */
+    --color-panel: 241 245 249; /* slate-100 */
   }
   
   .dark {
-    --color-background: 5 5 5;
-    --color-surface: 10 10 10;
+    /* Dark Mode */
+    --color-background: 5 5 5; /* #050505 */
+    --color-surface: 10 10 10; /* #0a0a0a */
+    --color-text-main: 255 255 255; /* white */
+    --color-text-muted: 203 213 225; /* slate-300 */
+    --color-border: 255 255 255; /* white */
+    --color-panel: 15 17 26; /* #0f111a */
   }
 
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-slate-300 font-sans antialiased overflow-x-hidden transition-colors duration-300;
+    @apply bg-background text-text-muted font-sans antialiased overflow-x-hidden transition-colors duration-300;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display text-white;
+    @apply font-display text-text-main;
   }
 }
 
@@ -42,11 +52,11 @@
 
   /* Mac Terminal specific styles */
   .mac-terminal {
-    @apply rounded-xl overflow-hidden border border-white/10 bg-[#0f111a]/95 shadow-2xl;
+    @apply rounded-xl overflow-hidden border border-border/10 bg-panel/95 shadow-2xl;
   }
   
   .mac-header {
-    @apply flex items-center gap-2 px-4 py-3 bg-[#1a1f2e] border-b border-white/10;
+    @apply flex items-center gap-2 px-4 py-3 bg-surface border-b border-border/10;
   }
 
   .mac-btn {

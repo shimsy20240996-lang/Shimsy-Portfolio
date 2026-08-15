@@ -73,29 +73,29 @@ const Contact: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-semibold mb-6 text-white">Let's talk about everything!</h3>
-            <p className="text-slate-400 mb-10 text-lg">
+            <h3 className="text-2xl font-semibold mb-6 text-text-main">Let's talk about everything!</h3>
+            <p className="text-text-muted mb-10 text-lg">
               Feel free to reach out for collaborations, opportunities, or just a friendly chat. I'm always open to discussing new projects and creative ideas.
             </p>
 
             <div className="space-y-6">
               <a href={`mailto:${portfolioData.personal.email}`} className="flex items-center gap-4 group">
-                <div className="w-14 h-14 bg-background border border-white/10 rounded-full flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                <div className="w-14 h-14 bg-background border border-border/10 rounded-full flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-text-main transition-colors duration-300">
                   <Mail size={24} />
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500 font-medium">Email Me</p>
-                  <p className="text-lg font-medium text-white group-hover:text-accent transition-colors">{portfolioData.personal.email}</p>
+                  <p className="text-sm text-text-muted font-medium">Email Me</p>
+                  <p className="text-lg font-medium text-text-main group-hover:text-accent transition-colors">{portfolioData.personal.email}</p>
                 </div>
               </a>
 
-              <div className="pt-8 border-t border-white/10">
-                <p className="text-sm text-slate-500 font-medium mb-4">Connect on Socials</p>
+              <div className="pt-8 border-t border-border/10">
+                <p className="text-sm text-text-muted font-medium mb-4">Connect on Socials</p>
                 <div className="flex gap-4">
-                  <a href={portfolioData.personal.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-background border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
+                  <a href={portfolioData.personal.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-background border border-border/10 rounded-full flex items-center justify-center text-text-main hover:bg-text-main/10 hover:-translate-y-1 transition-all duration-300">
                     <FaGithub size={20} />
                   </a>
-                  <a href={portfolioData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-background border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#0077b5] hover:border-[#0077b5] hover:-translate-y-1 transition-all duration-300">
+                  <a href={portfolioData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-background border border-border/10 rounded-full flex items-center justify-center text-text-main hover:bg-[#0077b5] hover:border-[#0077b5] hover:-translate-y-1 transition-all duration-300">
                     <FaLinkedin size={20} />
                   </a>
                 </div>
@@ -109,21 +109,21 @@ const Contact: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="glass-panel p-8 rounded-2xl relative border border-white/5 bg-[#0b1129]/80"
+            className="glass-panel p-8 rounded-2xl relative border border-border/10 bg-panel"
           >
             {submitted && (
               <div className="absolute inset-0 z-10 bg-surface/95 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center p-8 text-center animate-in fade-in duration-300 border border-accent/20">
                 <div className="w-16 h-16 bg-accent/20 text-accent rounded-full flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(168,85,247,0.3)]">
                   <Send size={32} />
                 </div>
-                <h4 className="text-2xl font-bold mb-2 text-white">Message Sent!</h4>
-                <p className="text-slate-400">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                <h4 className="text-2xl font-bold mb-2 text-text-main">Message Sent!</h4>
+                <p className="text-text-muted">Thank you for reaching out. I'll get back to you as soon as possible.</p>
               </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-slate-300 ml-1">Your Name</label>
+                <label htmlFor="name" className="text-sm font-medium text-text-muted ml-1">Your Name</label>
                 <input
                   type="text"
                   id="name"
@@ -131,13 +131,13 @@ const Contact: React.FC = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                  className="w-full bg-background border border-border/10 rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
                   placeholder="your name"
                 />
               </div>
               
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-slate-300 ml-1">Email Address</label>
+                <label htmlFor="email" className="text-sm font-medium text-text-muted ml-1">Email Address</label>
                 <input
                   type="email"
                   id="email"
@@ -145,13 +145,13 @@ const Contact: React.FC = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                  className="w-full bg-background border border-border/10 rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
                   placeholder="your mail"
                 />
               </div>
               
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium text-slate-300 ml-1">Subject</label>
+                <label htmlFor="subject" className="text-sm font-medium text-text-muted ml-1">Subject</label>
                 <input
                   type="text"
                   id="subject"
@@ -159,13 +159,13 @@ const Contact: React.FC = () => {
                   required
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                  className="w-full bg-background border border-border/10 rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
                   placeholder="your subject"
                 />
               </div>
               
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-slate-300 ml-1">Message</label>
+                <label htmlFor="message" className="text-sm font-medium text-text-muted ml-1">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -173,7 +173,7 @@ const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
+                  className="w-full bg-background border border-border/10 rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
                   placeholder="your message"
                 />
               </div>
@@ -181,7 +181,7 @@ const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-accent hover:bg-accent-light text-white font-medium py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-accent hover:bg-accent-light text-text-main font-medium py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>

@@ -16,7 +16,7 @@ const Certificates: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-main">
             Licenses & <span className="text-gradient">Certifications</span>
           </h2>
           <div className="w-20 h-1 bg-accent rounded-full mx-auto"></div>
@@ -28,19 +28,19 @@ const Certificates: React.FC = () => {
               <>
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="p-3 bg-white/5 rounded-xl w-12 h-12 flex items-center justify-center mb-6 group-hover:bg-accent/20 group-hover:text-accent transition-colors">
-                    <Award size={24} className="text-slate-200 group-hover:text-accent" />
+                  <div className="p-3 bg-text-main/5 rounded-xl w-12 h-12 flex items-center justify-center mb-6 group-hover:bg-accent/20 group-hover:text-accent transition-colors">
+                    <Award size={24} className="text-text-main group-hover:text-accent" />
                   </div>
                   
-                  <h3 className="text-lg font-bold mb-2 text-white group-hover:text-accent transition-colors">{cert.title}</h3>
+                  <h3 className="text-lg font-bold mb-2 text-text-main group-hover:text-accent transition-colors">{cert.title}</h3>
                   
                   <div className="mt-auto pt-4 flex items-center justify-between">
                     <div>
-                      <p className="text-slate-400 text-sm font-medium">{cert.issuer}</p>
-                      <p className="text-slate-500 text-xs mt-1">{cert.date}</p>
+                      <p className="text-text-muted text-sm font-medium">{cert.issuer}</p>
+                      <p className="text-text-muted text-xs mt-1">{cert.date}</p>
                     </div>
                     {cert.url && (
-                      <div className="text-slate-400 hover:text-accent transition-colors" title="View Certificate">
+                      <div className="text-text-muted hover:text-accent transition-colors" title="View Certificate">
                         <ExternalLink size={18} />
                       </div>
                     )}
@@ -57,7 +57,7 @@ const Certificates: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`glass-panel p-6 rounded-2xl group hover:border-accent/40 transition-all relative overflow-hidden bg-[#0b1129]/80 border border-white/5 ${cert.url ? 'cursor-pointer' : ''}`}
+                className={`glass-panel p-6 rounded-2xl group hover:border-accent/40 transition-all relative overflow-hidden bg-panel border border-border/10 ${cert.url ? 'cursor-pointer' : ''}`}
                 title={cert.url ? "Click to view certificate" : ""}
               >
                 {card}
@@ -80,15 +80,15 @@ const Certificates: React.FC = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-surface relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-white/10 flex flex-col"
+              className="bg-surface relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-border/10 flex flex-col"
               style={{ height: '85vh' }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between p-4 border-b border-white/10 bg-surface/80 backdrop-blur-md">
-                <h3 className="text-xl font-bold text-white">{selectedCert.title}</h3>
+              <div className="flex items-center justify-between p-4 border-b border-border/10 bg-surface/80 backdrop-blur-md">
+                <h3 className="text-xl font-bold text-text-main">{selectedCert.title}</h3>
                 <button
                   onClick={() => setSelectedCert(null)}
-                  className="p-2 bg-white/5 hover:bg-accent rounded-full text-white transition-colors"
+                  className="p-2 bg-text-main/5 hover:bg-accent rounded-full text-text-main transition-colors"
                 >
                   <X size={20} />
                 </button>
