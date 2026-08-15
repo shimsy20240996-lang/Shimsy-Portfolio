@@ -3,9 +3,9 @@ import type { PortfolioData } from '../types';
 export const portfolioData: PortfolioData = {
   personal: {
     name: "Shimsy Ahamed",
-    role: "Data Scientist",
+    role: "Data Scientist & AI/ML Engineer",
     tagline: "Building scalable web applications and intelligent data solutions",
-    bio: "I am a dedicated Software Engineer with a BSc (Hons) Computer Science. My passion lies in Data Science, AI, and Machine Learning. I enjoy bridging the gap between complex data problems and clean, user-friendly software solutions. With a strong foundation in Java, Python, and modern web technologies, I build applications that are not only performant but also visually engaging.",
+    bio: "I am a dedicated Data Scientist & AI/ML Engineer with a BSc (Hons) Computer Science. My passion lies in Data Science, Artificial Intelligence, and Machine Learning. I enjoy bridging the gap between complex data problems and clean, user-friendly software solutions. With a strong foundation in Java, Python, and modern web technologies, I build intelligent systems that are performant and visually engaging.",
     email: "shimsyahamed03@gmail.com", // Placeholder
     github: "https://github.com/shimsy20240996-lang",
     linkedin: "https://www.linkedin.com/in/shimsy-ahamed-0bb128333/",
