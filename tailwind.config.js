@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--bg-dark)",
-        surface: "var(--bg-surface)",
+        background: "rgb(var(--color-background) / <alpha-value>)",
+        surface: "rgb(var(--color-surface) / <alpha-value>)",
         primary: {
           light: "#38bdf8", // Sky 400
           DEFAULT: "#0ea5e9", // Cyan/Sky 500

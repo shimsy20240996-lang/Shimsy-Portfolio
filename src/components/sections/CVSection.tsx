@@ -7,9 +7,9 @@ const CVSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'overview' | 'education' | 'skills'>('overview');
 
   return (
-    <section id="cv" className="py-24 relative overflow-hidden bg-[var(--bg-surface)]">
+    <section id="cv" className="py-24 relative overflow-hidden bg-surface">
       {/* Background styling */}
-      <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/5 via-[var(--bg-surface)] to-[var(--bg-surface)] -z-10"></div>
+      <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/5 via-[var(--bg-surface)] to-surface -z-10"></div>
       
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <motion.div
@@ -27,7 +27,7 @@ const CVSection: React.FC = () => {
             <div className="w-20 h-1 bg-accent rounded-full"></div>
           </div>
           
-          <a href="/cv.pdf" download className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all duration-200 bg-[var(--bg-dark)] border border-white/10 rounded-xl hover:bg-white/5 hover:border-accent/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent overflow-hidden">
+          <a href="/cv.pdf" download className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all duration-200 bg-background border border-white/10 rounded-xl hover:bg-white/5 hover:border-accent/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent overflow-hidden">
             <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black/50"></span>
             <span className="relative flex items-center gap-2">
               <Download size={20} className="group-hover:-translate-y-1 transition-transform" />
@@ -38,7 +38,7 @@ const CVSection: React.FC = () => {
 
         <div className="glass-panel rounded-2xl border border-white/10 overflow-hidden flex flex-col lg:flex-row shadow-2xl bg-[#0b1129]/80">
           {/* Sidebar / Tabs */}
-          <div className="lg:w-64 bg-[var(--bg-dark)]/50 border-r border-white/10 p-6 flex flex-row lg:flex-col gap-2 overflow-x-auto">
+          <div className="lg:w-64 bg-background/50 border-r border-white/10 p-6 flex flex-row lg:flex-col gap-2 overflow-x-auto">
             {['overview', 'education', 'skills'].map((tab) => (
               <button
                 key={tab}
@@ -70,11 +70,11 @@ const CVSection: React.FC = () => {
                   <div className="prose prose-invert max-w-none text-slate-300">
                     <p className="text-lg leading-relaxed mb-6">{portfolioData.personal.bio}</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                      <div className="bg-[var(--bg-dark)]/50 p-6 rounded-xl border border-white/5">
+                      <div className="bg-background/50 p-6 rounded-xl border border-white/5">
                         <p className="text-sm text-slate-400 mb-1">Role</p>
                         <p className="font-semibold text-lg text-white">{portfolioData.personal.role}</p>
                       </div>
-                      <div className="bg-[var(--bg-dark)]/50 p-6 rounded-xl border border-white/5">
+                      <div className="bg-background/50 p-6 rounded-xl border border-white/5">
                         <p className="text-sm text-slate-400 mb-1">Degree</p>
                         <p className="font-semibold text-lg text-white">{portfolioData.education[0].degree}</p>
                       </div>
@@ -122,7 +122,7 @@ const CVSection: React.FC = () => {
                         <h4 className="font-bold text-lg mb-4 text-primary">{category.title}</h4>
                         <div className="flex flex-wrap gap-2">
                           {category.skills.map(skill => (
-                            <span key={skill.name} className="px-3 py-1.5 bg-[var(--bg-dark)] rounded-lg border border-white/5 text-sm font-medium text-slate-300 hover:border-accent/50 transition-colors cursor-default">
+                            <span key={skill.name} className="px-3 py-1.5 bg-background rounded-lg border border-white/5 text-sm font-medium text-slate-300 hover:border-accent/50 transition-colors cursor-default">
                               {skill.name}
                             </span>
                           ))}

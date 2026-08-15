@@ -5,7 +5,7 @@ import { GraduationCap, User, BookOpen } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 relative bg-[var(--bg-dark)]">
+    <section id="about" className="py-24 relative bg-background">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ const About: React.FC = () => {
             <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
               {portfolioData.education.map((edu) => (
                 <div key={edu.id} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-[var(--bg-surface)] text-accent shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-surface text-accent shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                     <div className="w-3 h-3 bg-accent rounded-full group-hover:scale-150 transition-transform duration-300"></div>
                   </div>
                   

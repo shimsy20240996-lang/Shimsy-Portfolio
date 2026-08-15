@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[var(--bg-surface)]/90 backdrop-blur-md shadow-lg border-b border-accent/20 py-4' : 'bg-transparent py-6'}`}>
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-surface/90 backdrop-blur-md shadow-lg border-b border-accent/20 py-4' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo */}
         <Link to="home" smooth={true} duration={500} className="cursor-pointer">
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[var(--bg-surface)]/95 backdrop-blur-xl border-b border-accent/20 overflow-hidden"
+            className="md:hidden bg-surface/95 backdrop-blur-xl border-b border-accent/20 overflow-hidden"
           >
             <div className="flex flex-col space-y-4 px-6 py-6">
               {navLinks.map((link) => (

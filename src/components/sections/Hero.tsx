@@ -40,7 +40,7 @@ developer.initialize();`;
   }, [fullCode]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-[var(--bg-dark)]">
+    <section id="home" className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-background">
       {/* Abstract Background Glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/20 rounded-full mix-blend-screen filter blur-[120px] animate-blob"></div>
       <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-[120px] animate-blob" style={{ animationDelay: '2s' }}></div>

@@ -7,7 +7,7 @@ const Certificates: React.FC = () => {
   const [selectedCert, setSelectedCert] = useState<any>(null);
 
   return (
-    <section id="certificates" className="py-24 bg-[var(--bg-surface)] relative">
+    <section id="certificates" className="py-24 bg-surface relative">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,11 +80,11 @@ const Certificates: React.FC = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-[var(--bg-surface)] relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-white/10 flex flex-col"
+              className="bg-surface relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-white/10 flex flex-col"
               style={{ height: '85vh' }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between p-4 border-b border-white/10 bg-[var(--bg-surface)]/80 backdrop-blur-md">
+              <div className="flex items-center justify-between p-4 border-b border-white/10 bg-surface/80 backdrop-blur-md">
                 <h3 className="text-xl font-bold text-white">{selectedCert.title}</h3>
                 <button
                   onClick={() => setSelectedCert(null)}

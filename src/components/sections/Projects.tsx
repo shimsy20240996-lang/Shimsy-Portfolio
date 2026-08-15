@@ -6,7 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="py-24 relative bg-[var(--bg-dark)]">
+    <section id="projects" className="py-24 relative bg-background">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
               className="glass-panel rounded-2xl overflow-hidden group flex flex-col h-full hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-shadow"
             >
               <div className="relative h-56 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-surface)] to-transparent z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
                 <img 
                   src={project.imageUrl} 
                   alt={project.title} 

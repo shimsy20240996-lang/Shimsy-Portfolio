@@ -6,21 +6,20 @@
 
 @layer base {
   :root {
-    --bg-dark: #050505; /* Default fallback */
-    --bg-surface: #0a0a0a;
+    --color-background: 5 10 31; /* #050a1f */
+    --color-surface: 11 17 41; /* #0b1129 */
   }
   
   .dark {
-    --bg-dark: #050a1f; /* Deep Navy Background */
-    --bg-surface: #0b1129; /* Slightly lighter navy for cards */
+    --color-background: 5 10 31;
+    --color-surface: 11 17 41;
   }
 
   html {
     scroll-behavior: smooth;
   }
   body {
-    /* Always default to dark theme for this reference design, but support toggle if needed */
-    @apply bg-[var(--bg-dark)] text-slate-300 font-sans antialiased overflow-x-hidden transition-colors duration-300;
+    @apply bg-background text-slate-300 font-sans antialiased overflow-x-hidden transition-colors duration-300;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -34,7 +33,7 @@
   }
   
   .glass-panel {
-    @apply bg-[var(--bg-surface)]/80 backdrop-blur-md border border-accent/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+    @apply bg-surface/80 backdrop-blur-md border border-accent/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
   }
 
   .glass-panel:hover {
