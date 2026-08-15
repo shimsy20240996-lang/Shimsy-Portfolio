@@ -16,13 +16,13 @@
   }
   
   .dark {
-    /* Dark Mode - AI Constellation Palette */
-    --color-background: 11 17 32; /* #0B1120 */
-    --color-surface: 15 23 42; /* slate-900 */
-    --color-text-main: 248 250 252; /* #F8FAFC */
-    --color-text-muted: 148 163 184; /* #94A3B8 */
-    --color-border: 30 41 59; /* slate-800 */
-    --color-panel: 15 23 42; /* slate-900 */
+    /* Dark Mode */
+    --color-background: 5 5 5; /* #050505 */
+    --color-surface: 10 10 10; /* #0a0a0a */
+    --color-text-main: 255 255 255; /* white */
+    --color-text-muted: 203 213 225; /* slate-300 */
+    --color-border: 255 255 255; /* white */
+    --color-panel: 15 17 26; /* #0f111a */
   }
 
   html {

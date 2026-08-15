@@ -1,15 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 
-// Configuration
+// Configuration (Fuchsia / Purple theme)
 const COLORS = {
-  bgNode: 'rgba(59, 130, 246, 0.2)', // dim blue
-  mainNode: 'rgba(6, 182, 212, 0.8)', // cyan
-  specialNode: 'rgba(59, 130, 246, 1)', // electric blue
-  line: 'rgba(6, 182, 212, 0.15)',
-  lineActive: 'rgba(6, 182, 212, 0.5)',
+  bgNode: 'rgba(168, 85, 247, 0.2)', // Purple 500 dim
+  mainNode: 'rgba(192, 38, 211, 0.6)', // Fuchsia 600
+  specialNode: 'rgba(217, 70, 239, 1)', // Fuchsia 500 bright
+  line: 'rgba(168, 85, 247, 0.15)',
+  lineActive: 'rgba(192, 38, 211, 0.5)',
   pulse: 'rgba(255, 255, 255, 0.8)',
   text: 'rgba(248, 250, 252, 0.9)',
-  tooltipBg: 'rgba(11, 17, 32, 0.9)'
+  tooltipBg: 'rgba(5, 5, 5, 0.9)'
 };
 
 const CONCEPTS = [
@@ -57,8 +57,9 @@ const ParticlesBackground: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Check reduced motion
+    // Use a slight movement even if reduced motion is preferred, just very slow
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const speedMultiplier = prefersReducedMotion ? 0.1 : 0.4;
 
     let animationFrameId: number;
     let width = 0;
@@ -67,11 +68,9 @@ const ParticlesBackground: React.FC = () => {
     let nodes: Node[] = [];
     let pulses: Pulse[] = [];
     
-    // Mouse state
     const mouse = { x: -1000, y: -1000, active: false };
 
     const resize = () => {
-      // Handle device pixel ratio for crisp text and lines
       const dpr = window.devicePixelRatio || 1;
       width = window.innerWidth;
       height = window.innerHeight;
@@ -89,7 +88,7 @@ const ParticlesBackground: React.FC = () => {
       pulses = [];
       
       const isMobile = width < 768;
-      const nodeCount = isMobile ? 40 : 120;
+      const nodeCount = isMobile ? 40 : 100;
       
       for (let i = 0; i < nodeCount; i++) {
         const typeRand = Math.random();
@@ -112,8 +111,8 @@ const ParticlesBackground: React.FC = () => {
         nodes.push({
           x, y,
           baseX: x, baseY: y,
-          vx: (Math.random() - 0.5) * (prefersReducedMotion ? 0.05 : 0.2),
-          vy: (Math.random() - 0.5) * (prefersReducedMotion ? 0.05 : 0.2),
+          vx: (Math.random() - 0.5) * speedMultiplier,
+          vy: (Math.random() - 0.5) * speedMultiplier,
           radius,
           type,
           concept,
@@ -126,27 +125,20 @@ const ParticlesBackground: React.FC = () => {
       if (!ctx) return;
       ctx.clearRect(0, 0, width, height);
 
-      // Distances for connections
       const connectDist = width < 768 ? 100 : 150;
-      const mouseInfluence = width < 768 ? 0 : 200; // Disable mouse influence on mobile
+      const mouseInfluence = width < 768 ? 0 : 200;
 
-      // Update & Draw nodes
       for (let i = 0; i < nodes.length; i++) {
         const node = nodes[i];
 
-        // Movement
-        if (!prefersReducedMotion) {
-          node.x += node.vx;
-          node.y += node.vy;
+        node.x += node.vx;
+        node.y += node.vy;
 
-          // Bounce off edges smoothly
-          if (node.x < 0 || node.x > width) node.vx *= -1;
-          if (node.y < 0 || node.y > height) node.vy *= -1;
-        }
+        if (node.x < 0 || node.x > width) node.vx *= -1;
+        if (node.y < 0 || node.y > height) node.vy *= -1;
 
-        // Mouse attraction
         let distToMouse = 9999;
-        if (mouse.active && !prefersReducedMotion) {
+        if (mouse.active) {
           const dx = mouse.x - node.x;
           const dy = mouse.y - node.y;
           distToMouse = Math.sqrt(dx * dx + dy * dy);
@@ -158,7 +150,6 @@ const ParticlesBackground: React.FC = () => {
           }
         }
 
-        // Draw connections
         for (let j = i + 1; j < nodes.length; j++) {
           const node2 = nodes[j];
           const dx = node.x - node2.x;
@@ -167,17 +158,15 @@ const ParticlesBackground: React.FC = () => {
 
           if (dist < connectDist) {
             const opacity = 1 - (dist / connectDist);
-            
-            // Highlight connections near mouse
             const isNearMouse = (distToMouse < mouseInfluence && mouse.active);
+            
             ctx.beginPath();
-            ctx.strokeStyle = isNearMouse ? COLORS.lineActive : `rgba(6, 182, 212, ${opacity * 0.3})`;
+            ctx.strokeStyle = isNearMouse ? COLORS.lineActive : `rgba(192, 38, 211, ${opacity * 0.3})`;
             ctx.lineWidth = isNearMouse ? 1 : 0.5;
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(node2.x, node2.y);
             ctx.stroke();
 
-            // Randomly create energy pulse
             if (!prefersReducedMotion && Math.random() < 0.0005 && pulses.length < 5) {
               pulses.push({
                 source: node,
@@ -189,7 +178,6 @@ const ParticlesBackground: React.FC = () => {
           }
         }
 
-        // Draw node
         ctx.beginPath();
         let color = COLORS.bgNode;
         if (node.type === 'main') color = COLORS.mainNode;
@@ -199,18 +187,16 @@ const ParticlesBackground: React.FC = () => {
         ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
         ctx.fill();
 
-        // Pulsing glow for special nodes
-        if (node.type === 'special' && !prefersReducedMotion) {
+        if (node.type === 'special') {
           node.pulseTimer += 0.05;
           const glowRadius = node.radius + 2 + Math.sin(node.pulseTimer) * 2;
           ctx.beginPath();
-          ctx.fillStyle = `rgba(59, 130, 246, ${0.2 + Math.sin(node.pulseTimer) * 0.1})`;
+          ctx.fillStyle = `rgba(217, 70, 239, ${0.2 + Math.sin(node.pulseTimer) * 0.1})`;
           ctx.arc(node.x, node.y, glowRadius, 0, Math.PI * 2);
           ctx.fill();
         }
       }
 
-      // Draw Energy Pulses
       for (let i = pulses.length - 1; i >= 0; i--) {
         const pulse = pulses[i];
         pulse.progress += pulse.speed;
@@ -228,14 +214,12 @@ const ParticlesBackground: React.FC = () => {
         ctx.arc(px, py, 1.5, 0, Math.PI * 2);
         ctx.fill();
         
-        // Pulse glow
         ctx.beginPath();
         ctx.fillStyle = `rgba(255, 255, 255, 0.4)`;
         ctx.arc(px, py, 4, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      // Draw Labels (always keep at top layer of canvas)
       for (let i = 0; i < nodes.length; i++) {
         const node = nodes[i];
         if (node.type === 'special' && node.concept) {
@@ -246,22 +230,19 @@ const ParticlesBackground: React.FC = () => {
             distToMouse = Math.sqrt(dx * dx + dy * dy);
           }
 
-          // Draw short label
           ctx.font = 'bold 10px sans-serif';
           ctx.fillStyle = COLORS.text;
           ctx.textAlign = 'center';
           ctx.fillText(node.concept.short, node.x, node.y - 8);
 
-          // Draw tooltip if hovered
           if (distToMouse < 40 && mouse.active) {
             const padX = 8;
             const padY = 4;
             ctx.font = '12px sans-serif';
             const textWidth = ctx.measureText(node.concept.full).width;
             
-            // Tooltip background
             ctx.fillStyle = COLORS.tooltipBg;
-            ctx.strokeStyle = COLORS.mainNode;
+            ctx.strokeStyle = COLORS.specialNode;
             ctx.lineWidth = 1;
             
             const tooltipY = node.y - 35;
@@ -270,13 +251,11 @@ const ParticlesBackground: React.FC = () => {
             if (ctx.roundRect) {
               ctx.roundRect(node.x - textWidth/2 - padX, tooltipY - 12 - padY, textWidth + padX * 2, 12 + padY * 2, 4);
             } else {
-              // fallback
               ctx.rect(node.x - textWidth/2 - padX, tooltipY - 12 - padY, textWidth + padX * 2, 12 + padY * 2);
             }
             ctx.fill();
             ctx.stroke();
 
-            // Tooltip text
             ctx.fillStyle = '#ffffff';
             ctx.fillText(node.concept.full, node.x, tooltipY);
           }
@@ -300,8 +279,11 @@ const ParticlesBackground: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseleave', handleMouseLeave);
     
-    resize();
-    draw();
+    // Initial delay to ensure full render layout before init
+    setTimeout(() => {
+      resize();
+      draw();
+    }, 100);
 
     return () => {
       window.removeEventListener('resize', resize);
@@ -313,13 +295,15 @@ const ParticlesBackground: React.FC = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0">
+      {/* Background radial gradient first (so it stays BEHIND the canvas) */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background/80 to-background pointer-events-none"></div>
+      
+      {/* Canvas ON TOP of the gradient */}
       <canvas 
         ref={canvasRef} 
-        className="w-full h-full opacity-70 transition-opacity duration-1000"
-        style={{ pointerEvents: 'auto' }} // Allow capturing mouse events for tooltip
+        className="relative w-full h-full opacity-100 transition-opacity duration-1000 z-10"
+        style={{ pointerEvents: 'auto' }}
       />
-      {/* Fallback gradient for depth */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background/50 to-background pointer-events-none"></div>
     </div>
   );
 };
