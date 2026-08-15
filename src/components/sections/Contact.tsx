@@ -113,7 +113,7 @@ const Contact: React.FC = () => {
           >
             {submitted && (
               <div className="absolute inset-0 z-10 bg-surface/95 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center p-8 text-center animate-in fade-in duration-300 border border-accent/20">
-                <div className="w-16 h-16 bg-accent/20 text-accent rounded-full flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                <div className="w-16 h-16 bg-accent/20 text-accent rounded-full flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(168,85,247,0.3)]">
                   <Send size={32} />
                 </div>
                 <h4 className="text-2xl font-bold mb-2 text-white">Message Sent!</h4>
@@ -181,7 +181,7 @@ const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-accent hover:bg-accent-light text-white font-medium py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-accent hover:bg-accent-light text-white font-medium py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>

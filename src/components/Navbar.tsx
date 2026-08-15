@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
                 className="text-sm font-medium text-slate-300 hover:text-white hover:text-shadow-sm transition-colors cursor-pointer relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full shadow-[0_0_8px_rgba(14,165,233,0.8)]"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full shadow-[0_0_8px_rgba(192,38,211,0.8)]"></span>
               </Link>
             </motion.div>
           ))}

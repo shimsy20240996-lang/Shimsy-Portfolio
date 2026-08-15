@@ -57,7 +57,7 @@ const Skills: React.FC = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: 0.1 + (index * 0.05) }}
-                  className="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:border-accent/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default group"
+                  className="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:border-accent/50 hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all cursor-default group"
                 >
                   <Icon className="text-accent text-xl group-hover:scale-110 transition-transform" />
                   <span className="font-semibold text-slate-200 tracking-wide">

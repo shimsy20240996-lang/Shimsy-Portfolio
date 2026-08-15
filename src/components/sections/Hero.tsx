@@ -52,7 +52,7 @@ developer.initialize();`;
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full max-w-5xl mx-auto h-[400px] sm:h-[450px] relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(37,99,235,0.15)] mb-12 border border-white/5"
+          className="w-full max-w-5xl mx-auto h-[400px] sm:h-[450px] relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(168,85,247,0.15)] mb-12 border border-white/5"
         >
           {/* Mac Terminal Layout */}
           <div className="absolute inset-0 bg-[#0a0f1d]/90 backdrop-blur-xl flex flex-col">
@@ -118,7 +118,7 @@ developer.initialize();`;
             className="flex flex-wrap gap-4 justify-center"
           >
             <Link to="projects" smooth={true} duration={500} offset={-80}>
-              <button className="group flex items-center gap-2 bg-accent hover:bg-accent-light text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]">
+              <button className="group flex items-center gap-2 bg-accent hover:bg-accent-light text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]">
                 View Projects 
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>

@@ -11,14 +11,14 @@ export default {
         background: "rgb(var(--color-background) / <alpha-value>)",
         surface: "rgb(var(--color-surface) / <alpha-value>)",
         primary: {
-          light: "#38bdf8", // Sky 400
-          DEFAULT: "#0ea5e9", // Cyan/Sky 500
-          dark: "#0284c7", // Sky 600
+          light: "#d946ef", // Fuchsia 500
+          DEFAULT: "#c026d3", // Fuchsia 600
+          dark: "#a21caf", // Fuchsia 700
         },
         accent: {
-          light: "#60a5fa", // Blue 400
-          DEFAULT: "#3b82f6", // Electric Blue 500
-          dark: "#2563eb", // Blue 600
+          light: "#c084fc", // Purple 400
+          DEFAULT: "#a855f7", // Purple 500
+          dark: "#9333ea", // Purple 600
         },
         navy: {
           light: "#1e293b", // Slate 800
@@ -47,8 +47,8 @@ export default {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         pulseGlow: {
-          '0%, 100%': { boxShadow: '0 0 15px rgba(59, 130, 246, 0.4)' },
-          '50%': { boxShadow: '0 0 25px rgba(59, 130, 246, 0.7)' },
+          '0%, 100%': { boxShadow: '0 0 15px rgba(192, 38, 211, 0.4)' },
+          '50%': { boxShadow: '0 0 25px rgba(192, 38, 211, 0.7)' },
         }
       }
     },
