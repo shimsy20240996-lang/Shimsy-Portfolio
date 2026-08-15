@@ -35,7 +35,7 @@ const About: React.FC = () => {
             <div className="relative mb-8 w-48 h-48 sm:w-56 sm:h-56 mx-auto group-hover:scale-105 transition-transform duration-500">
               <div className="absolute inset-[-15px] border-2 border-dashed border-primary rounded-full animate-[float_6s_ease-in-out_infinite] opacity-50 z-0"></div>
               <img 
-                src={portfolioData.personal.profileImage.replace('./', '/')} 
+                src={portfolioData.personal.profileImage ? portfolioData.personal.profileImage.replace('./', '/') : '/profile.png'} 
                 alt="Profile" 
                 className="w-full h-full object-cover rounded-full filter grayscale-[10%] contrast-110 group-hover:grayscale-0 group-hover:contrast-125 transition-all duration-500 shadow-[0_0_30px_rgba(192,38,211,0.3)] group-hover:shadow-[0_0_50px_rgba(192,38,211,0.6)] relative z-10" 
               />
