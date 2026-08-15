@@ -7,7 +7,7 @@ const Certificates: React.FC = () => {
   const [selectedCert, setSelectedCert] = useState<any>(null);
 
   return (
-    <section id="certificates" className="py-24 bg-surface/30 relative">
+    <section id="certificates" className="py-24 bg-[var(--bg-surface)] relative">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ const Certificates: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Licenses & <span className="text-gradient">Certifications</span>
           </h2>
           <div className="w-20 h-1 bg-accent rounded-full mx-auto"></div>
@@ -26,21 +26,21 @@ const Certificates: React.FC = () => {
           {portfolioData.certificates.map((cert, index) => {
             const card = (
               <>
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="p-3 bg-slate-200 dark:bg-white/5 rounded-xl w-12 h-12 flex items-center justify-center mb-6 group-hover:bg-accent/20 group-hover:text-accent transition-colors">
-                    <Award size={24} className="text-slate-700 dark:text-slate-200 group-hover:text-accent" />
+                  <div className="p-3 bg-white/5 rounded-xl w-12 h-12 flex items-center justify-center mb-6 group-hover:bg-accent/20 group-hover:text-accent transition-colors">
+                    <Award size={24} className="text-slate-200 group-hover:text-accent" />
                   </div>
                   
-                  <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white group-hover:text-accent dark:group-hover:text-white transition-colors">{cert.title}</h3>
+                  <h3 className="text-lg font-bold mb-2 text-white group-hover:text-accent transition-colors">{cert.title}</h3>
                   
                   <div className="mt-auto pt-4 flex items-center justify-between">
                     <div>
-                      <p className="text-slate-600 dark:text-slate-400 text-sm font-medium">{cert.issuer}</p>
+                      <p className="text-slate-400 text-sm font-medium">{cert.issuer}</p>
                       <p className="text-slate-500 text-xs mt-1">{cert.date}</p>
                     </div>
                     {cert.url && (
-                      <div className="text-slate-500 dark:text-slate-400 hover:text-accent transition-colors" title="View Certificate">
+                      <div className="text-slate-400 hover:text-accent transition-colors" title="View Certificate">
                         <ExternalLink size={18} />
                       </div>
                     )}
@@ -57,7 +57,7 @@ const Certificates: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`glass-panel p-6 rounded-2xl group hover:border-accent/40 transition-all relative overflow-hidden ${cert.url ? 'cursor-pointer' : ''}`}
+                className={`glass-panel p-6 rounded-2xl group hover:border-accent/40 transition-all relative overflow-hidden bg-[#0b1129]/80 border border-white/5 ${cert.url ? 'cursor-pointer' : ''}`}
                 title={cert.url ? "Click to view certificate" : ""}
               >
                 {card}
@@ -80,21 +80,21 @@ const Certificates: React.FC = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-surface relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.2)] dark:shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-slate-300 dark:border-white/10 flex flex-col"
+              className="bg-[var(--bg-surface)] relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-white/10 flex flex-col"
               style={{ height: '85vh' }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between p-4 border-b border-slate-300 dark:border-white/10 bg-surface/80 backdrop-blur-md">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">{selectedCert.title}</h3>
+              <div className="flex items-center justify-between p-4 border-b border-white/10 bg-[var(--bg-surface)]/80 backdrop-blur-md">
+                <h3 className="text-xl font-bold text-white">{selectedCert.title}</h3>
                 <button
                   onClick={() => setSelectedCert(null)}
-                  className="p-2 bg-slate-200 dark:bg-white/5 hover:bg-accent rounded-full text-slate-700 dark:text-white transition-colors"
+                  className="p-2 bg-white/5 hover:bg-accent rounded-full text-white transition-colors"
                 >
                   <X size={20} />
                 </button>
               </div>
               
-              <div className="w-full flex-grow p-0 sm:p-4 bg-slate-100 dark:bg-black/20">
+              <div className="w-full flex-grow p-0 sm:p-4 bg-black/20">
                 {selectedCert.url.toLowerCase().endsWith('.png') || selectedCert.url.toLowerCase().endsWith('.jpg') || selectedCert.url.toLowerCase().endsWith('.jpeg') ? (
                   <img src={selectedCert.url} alt={selectedCert.title} className="w-full h-full object-contain rounded-xl" />
                 ) : (

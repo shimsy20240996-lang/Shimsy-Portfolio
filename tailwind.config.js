@@ -8,25 +8,32 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "rgb(var(--color-background) / <alpha-value>)",
-        surface: "rgb(var(--color-surface) / <alpha-value>)",
-        accent: {
-          light: "#34d399",
-          DEFAULT: "#10b981", // Green primary
-          dark: "#059669",
+        background: "var(--bg-dark)",
+        surface: "var(--bg-surface)",
+        primary: {
+          light: "#38bdf8", // Sky 400
+          DEFAULT: "#0ea5e9", // Cyan/Sky 500
+          dark: "#0284c7", // Sky 600
         },
-        purple: {
-          light: "#2dd4bf", // teal-400
-          DEFAULT: "#14b8a6", // teal-500
-          dark: "#0f766e", // teal-700
+        accent: {
+          light: "#60a5fa", // Blue 400
+          DEFAULT: "#3b82f6", // Electric Blue 500
+          dark: "#2563eb", // Blue 600
+        },
+        navy: {
+          light: "#1e293b", // Slate 800
+          DEFAULT: "#0f172a", // Slate 900
+          dark: "#020617", // Slate 950
         }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        display: ['Outfit', 'sans-serif'],
       },
       animation: {
         'blob': 'blob 7s infinite',
-        'glitch': 'glitch 3s infinite linear alternate-reverse',
+        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+        'pulse-glow': 'pulseGlow 2s infinite',
       },
       keyframes: {
         blob: {
@@ -35,18 +42,13 @@ export default {
           '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
           '100%': { transform: 'translate(0px, 0px) scale(1)' },
         },
-        glitch: {
-            '0%': { clipPath: 'polygon(0 0, 100% 0, 100% 10%, 0 10%)', transform: 'translate(-2px, 2px)' },
-            '10%': { clipPath: 'polygon(0 15%, 100% 15%, 100% 25%, 0 25%)', transform: 'translate(2px, -2px)' },
-            '20%': { clipPath: 'polygon(0 10%, 100% 10%, 100% 20%, 0 20%)', transform: 'translate(-2px, 0)' },
-            '30%': { clipPath: 'polygon(0 40%, 100% 40%, 100% 50%, 0 50%)', transform: 'translate(0, 2px)' },
-            '40%': { clipPath: 'polygon(0 30%, 100% 30%, 100% 40%, 0 40%)', transform: 'translate(2px, -2px)' },
-            '50%': { clipPath: 'polygon(0 80%, 100% 80%, 100% 90%, 0 90%)', transform: 'translate(-2px, 2px)' },
-            '60%': { clipPath: 'polygon(0 50%, 100% 50%, 100% 60%, 0 60%)', transform: 'translate(2px, 0)' },
-            '70%': { clipPath: 'polygon(0 70%, 100% 70%, 100% 80%, 0 80%)', transform: 'translate(-2px, -2px)' },
-            '80%': { clipPath: 'polygon(0 90%, 100% 90%, 100% 100%, 0 100%)', transform: 'translate(2px, 2px)' },
-            '90%': { clipPath: 'polygon(0 60%, 100% 60%, 100% 70%, 0 70%)', transform: 'translate(-2px, 0)' },
-            '100%': { clipPath: 'polygon(0 20%, 100% 20%, 100% 30%, 0 30%)', transform: 'translate(0, -2px)' },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        pulseGlow: {
+          '0%, 100%': { boxShadow: '0 0 15px rgba(59, 130, 246, 0.4)' },
+          '50%': { boxShadow: '0 0 25px rgba(59, 130, 246, 0.7)' },
         }
       }
     },

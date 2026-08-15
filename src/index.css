@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,50 +6,51 @@
 
 @layer base {
   :root {
-    --color-background: 250 250 250; /* #fafafa */
-    --color-surface: 255 255 255; /* #ffffff */
+    --bg-dark: #050505; /* Default fallback */
+    --bg-surface: #0a0a0a;
   }
   
   .dark {
-    --color-background: 15 15 15; /* #0f0f0f */
-    --color-surface: 26 26 26; /* #1a1a1a */
+    --bg-dark: #050a1f; /* Deep Navy Background */
+    --bg-surface: #0b1129; /* Slightly lighter navy for cards */
   }
 
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-slate-900 dark:text-slate-200 font-sans antialiased overflow-x-hidden transition-colors duration-300;
+    /* Always default to dark theme for this reference design, but support toggle if needed */
+    @apply bg-[var(--bg-dark)] text-slate-300 font-sans antialiased overflow-x-hidden transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-white;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-purple-light;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent via-primary to-primary-light;
   }
   
   .glass-panel {
-    @apply bg-surface/50 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+    @apply bg-[var(--bg-surface)]/80 backdrop-blur-md border border-accent/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
   }
 
   .glass-panel:hover {
-    @apply border-accent/40 shadow-[0_0_30px_rgba(16,185,129,0.2),_0_8px_32px_0_rgba(0,0,0,0.1)] dark:shadow-[0_0_30px_rgba(16,185,129,0.3),_0_8px_32px_0_rgba(0,0,0,0.3)];
+    @apply border-accent/50 shadow-[0_0_30px_rgba(59,130,246,0.3),_0_8px_32px_0_rgba(0,0,0,0.3)];
   }
 
-  .glitch-text {
-    position: relative;
-    display: inline-block;
-    color: transparent;
-    -webkit-text-stroke: 1px #10b981;
-    text-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  /* Mac Terminal specific styles */
+  .mac-terminal {
+    @apply rounded-xl overflow-hidden border border-white/10 bg-[#0f111a]/95 shadow-2xl;
+  }
+  
+  .mac-header {
+    @apply flex items-center gap-2 px-4 py-3 bg-[#1a1f2e] border-b border-white/10;
   }
 
-  .glitch-text::before {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #10b981;
-    animation: glitch 3s infinite linear alternate-reverse;
+  .mac-btn {
+    @apply w-3 h-3 rounded-full;
   }
 }

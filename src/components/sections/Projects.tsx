@@ -6,7 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-24 relative bg-[var(--bg-dark)]">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3 text-slate-900 dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
             <Briefcase className="text-accent" size={32} />
             Featured <span className="text-gradient">Projects</span>
           </h2>
@@ -30,10 +30,10 @@ const Projects: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-panel rounded-2xl overflow-hidden group flex flex-col h-full hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition-shadow"
+              className="glass-panel rounded-2xl overflow-hidden group flex flex-col h-full hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-shadow"
             >
               <div className="relative h-56 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-surface)] to-transparent z-10"></div>
                 <img 
                   src={project.imageUrl} 
                   alt={project.title} 
@@ -45,27 +45,27 @@ const Projects: React.FC = () => {
               </div>
               
               <div className="p-6 flex-grow flex flex-col relative z-20 -mt-6">
-                <div className="bg-surface/80 backdrop-blur-md rounded-xl p-4 border border-slate-200 dark:border-white/5 flex-grow shadow-lg">
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors text-slate-900 dark:text-white">{project.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 line-clamp-3">
+                <div className="bg-[#0b1129]/90 backdrop-blur-md rounded-xl p-4 border border-white/5 flex-grow shadow-lg">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors text-white">{project.title}</h3>
+                  <p className="text-slate-400 text-sm mb-6 line-clamp-3">
                     {project.description}
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mb-6 mt-auto">
                     {project.techStack.map((tech) => (
-                      <span key={tech} className="text-xs font-medium text-purple-light bg-purple/10 px-2.5 py-1 rounded-md">
+                      <span key={tech} className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex gap-3 pt-4 border-t border-slate-200 dark:border-white/10">
+                  <div className="flex gap-3 pt-4 border-t border-white/10">
                     {project.githubUrl && (
                       <a 
                         href={project.githubUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-surface hover:bg-slate-100 dark:hover:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-300 text-sm font-medium transition-colors"
+                        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg hover:bg-white/5 border border-white/10 text-slate-300 text-sm font-medium transition-colors"
                       >
                         <FaGithub size={16} /> Code
                       </a>
