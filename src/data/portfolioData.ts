@@ -87,6 +87,14 @@ export const portfolioData: PortfolioData = {
       techStack: ["PowerBI", "Data Analysis", "Data Visualization"],
       imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop", // placeholder image of a data dashboard
       liveUrl: "https://app.powerbi.com/groups/me/reports/c9fa07f8-7bcc-443b-a62f-3ff9fc3ed1b0/2d7495750ee077602735?experience=power-bi",
+    },
+    {
+      id: "proj-4",
+      title: "Smart Token Management System",
+      description: "A comprehensive and efficient token management system designed to handle queues and service flows, providing a seamless user experience.",
+      techStack: ["Web Application", "Management System", "UI/UX"],
+      imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop", // placeholder image for management system
+      liveUrl: "https://token-management-system-ed5l.onrender.com/",
     }
   ],
   certificates: [
