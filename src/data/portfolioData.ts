@@ -79,6 +79,7 @@ export const portfolioData: PortfolioData = {
       techStack: ["Python"],
       imageUrl: "./treasure_island.png",
       githubUrl: "https://github.com/shimsy20240996-lang/Treasure-island-game.git",
+      liveUrl: "https://shimsy20240996-lang.github.io/Treasure-island-game/",
     },
     {
       id: "proj-3",
