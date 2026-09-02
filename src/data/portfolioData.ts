@@ -75,6 +75,14 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: "proj-2",
+      title: "Butterfly Care — E-Commerce Platform",
+      description: "A full-featured modern e-commerce web platform for baby and maternity care products in Sri Lanka, featuring dynamic product catalogs, category filtering, cart management, and seamless WhatsApp ordering integration.",
+      techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "E-Commerce", "UI/UX"],
+      imageUrl: "./butterfly_care_preview.jpg",
+      liveUrl: "https://butterfly-care-e-commerce-website.vercel.app/",
+    },
+    {
+      id: "proj-3",
       title: "Airport Management System",
       description: "A comprehensive management system for airport operations including flight scheduling, passenger tracking, and baggage handling.",
       techStack: ["Python", "Data Analysis"],
@@ -82,7 +90,7 @@ export const portfolioData: PortfolioData = {
       githubUrl: "https://github.com/shimsy20240996-lang/airport-data-analysis-python.git",
     },
     {
-      id: "proj-3",
+      id: "proj-4",
       title: "Treasure Island",
       description: "An interactive text-based adventure game where the player makes choices to navigate challenges and find the hidden treasure.",
       techStack: ["Python"],
@@ -91,7 +99,7 @@ export const portfolioData: PortfolioData = {
       liveUrl: "https://shimsy20240996-lang.github.io/Treasure-island-game/",
     },
     {
-      id: "proj-4",
+      id: "proj-5",
       title: "Interactive PowerBI Dashboard",
       description: "A comprehensive PowerBI dashboard providing deep data visualization and business intelligence insights.",
       techStack: ["PowerBI", "Data Analysis", "Data Visualization"],
@@ -99,7 +107,7 @@ export const portfolioData: PortfolioData = {
       liveUrl: "https://app.powerbi.com/groups/me/reports/c9fa07f8-7bcc-443b-a62f-3ff9fc3ed1b0/2d7495750ee077602735?experience=power-bi",
     },
     {
-      id: "proj-5",
+      id: "proj-6",
       title: "Smart Token Management System",
       description: "A comprehensive and efficient token management system designed to handle queues and service flows, providing a seamless user experience.",
       techStack: ["Web Application", "Management System", "UI/UX"],
