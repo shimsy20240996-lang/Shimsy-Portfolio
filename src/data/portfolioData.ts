@@ -156,7 +156,7 @@ export const portfolioData: PortfolioData = {
       title: "Elements of AI",
       issuer: "MinnaLearn & University of Helsinki",
       date: "2026",
-      url: "./Certificates/certificate-elements-of-ai.png"
+      url: "./Certificates/certificate-elements-of-ai.pdf"
     },
     {
       id: "cert-7",
@@ -177,7 +177,7 @@ export const portfolioData: PortfolioData = {
       title: "Data Science for Beginners",
       issuer: "Cursa",
       date: "2026",
-      url: "./Certificates/Data_Science_for_Beginners_Cursa.jpg"
+      url: "./Certificates/Data_Science_for_Beginners_Cursa.pdf"
     },
     {
       id: "cert-10",
