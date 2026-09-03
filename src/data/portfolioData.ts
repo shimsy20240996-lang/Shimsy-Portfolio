@@ -178,6 +178,20 @@ export const portfolioData: PortfolioData = {
       issuer: "Cursa",
       date: "2026",
       url: "./Certificates/Data_Science_for_Beginners_Cursa.jpg"
+    },
+    {
+      id: "cert-10",
+      title: "Web Design for Beginners",
+      issuer: "University of Moratuwa",
+      date: "2026",
+      url: "./Certificates/Web_Design_for_Beginners_Moratuwa.pdf"
+    },
+    {
+      id: "cert-11",
+      title: "Professional Membership — Student Member",
+      issuer: "Computer Society of Sri Lanka (CSSL)",
+      date: "2026",
+      url: "./Certificates/CSSL_Certificate_S19874.pdf"
     }
   ]
 };
