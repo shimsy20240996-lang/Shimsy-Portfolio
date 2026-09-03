@@ -31,7 +31,7 @@ Welcome to the source code of my personal portfolio website! I am a **Data Scien
 - **Animations:** Framer Motion, HTML5 Canvas API
 - **Icons:** Lucide React, React Icons
 - **Backend/Database:** Firebase Firestore (Serverless)
-- **Deployment:** GitHub Pages / Vercel
+- **Deployment:** GitHub Pages
 
 ---
 
