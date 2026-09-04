@@ -86,7 +86,7 @@ export const portfolioData: PortfolioData = {
       title: "Airport Data Analysis Dashboard",
       description: "An interactive Python & Streamlit analytics dashboard designed to process airport flight operations, compute key operational metrics, and visualize data trends with dynamic charts and histograms.",
       techStack: ["Python", "Streamlit", "Data Analysis", "Data Visualization", "Pandas"],
-      imageUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1000&auto=format&fit=crop",
+      imageUrl: "./airport_dashboard_preview.jpg",
       githubUrl: "https://github.com/shimsy20240996-lang/airport-data-analysis-python.git",
       liveUrl: "https://airport-data-analysis-python-b6d9gp4pkn9uxjcauerxky.streamlit.app/",
     },
