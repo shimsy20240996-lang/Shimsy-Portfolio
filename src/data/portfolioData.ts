@@ -66,6 +66,14 @@ export const portfolioData: PortfolioData = {
   projects: [
     {
       id: "proj-1",
+      title: "FAISI AI — Intelligent Conversational Assistant",
+      description: "A modern, full-featured conversational AI platform powered by Gemini AI featuring real-time response streaming, document-grounded Retrieval-Augmented Generation (RAG), voice interaction, and cloud session persistence.",
+      techStack: ["React", "TypeScript", "Tailwind CSS", "Gemini AI", "RAG", "Node.js"],
+      imageUrl: "./sabu_ai_preview.png",
+      liveUrl: "https://sabu-ai.onrender.com",
+    },
+    {
+      id: "proj-2",
       title: "Interactive Developer Portfolio",
       description: "A modern, highly responsive personal portfolio website featuring dynamic HTML5 Canvas particle constellations, terminal typing animations, sleek glassmorphism UI, and serverless Firebase integration.",
       techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Firebase"],
@@ -74,7 +82,7 @@ export const portfolioData: PortfolioData = {
       liveUrl: "https://shimsy20240996-lang.github.io/Shimsy-Portfolio/",
     },
     {
-      id: "proj-2",
+      id: "proj-3",
       title: "Butterfly Care — E-Commerce Platform",
       description: "A full-featured modern e-commerce web platform for baby and maternity care products in Sri Lanka, featuring dynamic product catalogs, category filtering, cart management, and seamless WhatsApp ordering integration.",
       techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "E-Commerce", "UI/UX"],
@@ -82,7 +90,7 @@ export const portfolioData: PortfolioData = {
       liveUrl: "https://butterfly-care-e-commerce-website.vercel.app/",
     },
     {
-      id: "proj-3",
+      id: "proj-4",
       title: "Airport Data Analysis Dashboard",
       description: "An interactive Python & Streamlit analytics dashboard designed to process airport flight operations, compute key operational metrics, and visualize data trends with dynamic charts and histograms.",
       techStack: ["Python", "Streamlit", "Data Analysis", "Data Visualization", "Pandas"],
@@ -91,7 +99,7 @@ export const portfolioData: PortfolioData = {
       liveUrl: "https://airport-data-analysis-python-b6d9gp4pkn9uxjcauerxky.streamlit.app/",
     },
     {
-      id: "proj-4",
+      id: "proj-5",
       title: "Treasure Island",
       description: "An interactive text-based adventure game where the player makes choices to navigate challenges and find the hidden treasure.",
       techStack: ["Python"],
@@ -100,7 +108,7 @@ export const portfolioData: PortfolioData = {
       liveUrl: "https://shimsy20240996-lang.github.io/Treasure-island-game/",
     },
     {
-      id: "proj-5",
+      id: "proj-6",
       title: "Interactive PowerBI Dashboard",
       description: "A comprehensive PowerBI dashboard providing deep data visualization and business intelligence insights.",
       techStack: ["PowerBI", "Data Analysis", "Data Visualization"],
@@ -108,7 +116,7 @@ export const portfolioData: PortfolioData = {
       liveUrl: "https://app.powerbi.com/groups/me/reports/c9fa07f8-7bcc-443b-a62f-3ff9fc3ed1b0/2d7495750ee077602735?experience=power-bi",
     },
     {
-      id: "proj-6",
+      id: "proj-7",
       title: "Smart Token Management System",
       description: "A comprehensive and efficient token management system designed to handle queues and service flows, providing a seamless user experience.",
       techStack: ["Web Application", "Management System", "UI/UX"],
