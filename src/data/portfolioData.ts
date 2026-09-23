@@ -197,6 +197,13 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: "cert-11",
+      title: "Front-End Web Development",
+      issuer: "University of Moratuwa",
+      date: "2026",
+      url: "./Certificates/Front_End_Web_Development_Moratuwa.pdf"
+    },
+    {
+      id: "cert-12",
       title: "Professional Membership — Student Member",
       issuer: "Computer Society of Sri Lanka (CSSL)",
       date: "2026",

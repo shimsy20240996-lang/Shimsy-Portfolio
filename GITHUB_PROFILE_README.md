@@ -17,9 +17,9 @@
 
 <!-- Social Links -->
 <p align="center">
-  <a href="mailto:your-email@example.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-  <a href="https://linkedin.com/in/your-linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="https://your-portfolio-link.com"><img src="https://img.shields.io/badge/Portfolio-10B981?style=for-the-badge&logo=Planet&logoColor=white" alt="Portfolio" /></a>
+  <a href="mailto:shimsyahamed03@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  <a href="https://www.linkedin.com/in/shimsy-ahamed-0bb128333/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://shimsy20240996-lang.github.io/Shimsy-Portfolio/"><img src="https://img.shields.io/badge/Portfolio-10B981?style=for-the-badge&logo=Planet&logoColor=white" alt="Portfolio" /></a>
 </p>
 
 ---
